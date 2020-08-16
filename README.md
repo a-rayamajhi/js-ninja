@@ -2,7 +2,7 @@
 
 JavaScript Trivia - Single Page Application using Knockout.js
 
-> 10 JavaScript Trivia
+
 **GH Branch:**
 
 > master: PROD
