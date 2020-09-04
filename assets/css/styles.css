@@ -1,0 +1,17 @@
+html,
+body {
+  font-family: "Roboto Condensed", sans-serif;
+  color: #161616;
+  scroll-behavior: smooth;
+}
+
+body {
+  height: 90vh;
+}
+
+.wrapper {
+  height: inherit;
+  display: flex;
+  justify-items: center;
+  align-items: center;
+}
