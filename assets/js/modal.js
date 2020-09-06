@@ -1,4 +1,4 @@
-const seeds = [
+const modal = [
   {
     question: "Is Javascript an interpreted or compiled language?",
     options: ["Interpreted", "Compiled", "Both", "Neither"],
