@@ -24,7 +24,7 @@
   <body>
     <div class="wrapper">
       <!-- Home View -->
-      <div class="container" data-bind="visible: currentRoute() == 'home'">
+      <div class="container" data-bind="visible: currentState() == 'home'">
         <div class="mx-auto">
           <img src="assets/images/Logo.png" alt="Logo" />
         </div>
@@ -40,25 +40,62 @@
         <br />
         <div>
           <button
-            data-bind="click: toRouter"
+            data-bind="click: toState"
             data-value="trivia"
             type="button"
             class="btn btn-outline-primary"
           >
-            You're Game
+            I'm Game
           </button>
         </div>
       </div>
 
       <!-- Trivia View -->
-      <div class="container" data-bind="visible: currentRoute() == 'trivia'">
+      <div class="container" data-bind="visible: currentState() == 'trivia'">
+        <div class="mx-auto">
+          <img src="assets/images/Logo.png" alt="Logo" />
+        </div>
+        <div class="display-4">JS NINJA</div>
         <div>
           <strong data-bind="text: jsNinja"></strong>
+        </div>
+        <hr />
+
+        <div class="container">
+          <div
+            class="question"
+            data-bind="text: currentTrivia() ? currentTrivia().question : ''"
+          ></div>
+          <br />
+          <div
+            data-bind="foreach: currentTrivia() ? currentTrivia().options : []"
+          >
+            <div>
+              <input
+                type="radio"
+                data-bind="checkedValue: $data, checked: $root.chosenItem"
+              />
+
+              &nbsp;
+              <span data-bind="text: $data.name"></span>
+            </div>
+          </div>
+          <hr />
+          <div>
+            <button
+              data-bind="click: toState"
+              data-value="trivia"
+              type="button"
+              class="btn btn-outline-success"
+            >
+              Submit
+            </button>
+          </div>
         </div>
       </div>
 
       <!-- Result View -->
-      <div class="container" data-bind="visible: currentRoute() == 'result'">
+      <div class="container" data-bind="visible: currentState() == 'result'">
         Result
       </div>
     </div>
