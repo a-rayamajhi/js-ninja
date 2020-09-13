@@ -22,10 +22,13 @@
     <link rel="stylesheet" href="assets/css/styles.css" />
 
     <!-- Favicon icon -->
-  <link rel="shortcut icon" href="assets/images/favicon.ico" type="image/x-icon">
-  <link rel="icon" href="assets/images/favicon.ico" type="image/x-icon">
-  <!------------->
-
+    <link
+      rel="shortcut icon"
+      href="assets/images/favicon.ico"
+      type="image/x-icon"
+    />
+    <link rel="icon" href="assets/images/favicon.ico" type="image/x-icon" />
+    <!------------->
   </head>
   <body>
     <div class="wrapper">
@@ -36,6 +39,7 @@
         <div class="display-6">JS NINJA</div>
       </div>
 
+      <!-- Home State -->
       <div class="container-fluid">
         <div class="state-home" data-bind="visible: currentState() == 'home'">
           <div class="container">
@@ -62,6 +66,10 @@
           <div class="container">
             <div>
               <strong data-bind="text: jsNinja"></strong>
+            </div>
+            <div>
+              Trivia:
+              <strong data-bind="text: length() ? length() : ''"></strong>
             </div>
             <hr />
 

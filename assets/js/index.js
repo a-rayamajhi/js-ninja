@@ -21,15 +21,15 @@
     self.currentTrivia = ko.observable();
     self.chosenItem = ko.observable();
     self.chosenItems = [];
-    self.length = 0;
+    self.length = ko.observable(0);
 
     self.toState = function (ctx, event) {
       console.log(self.length, self.chosenItems);
       if (!!event.target.dataset && !!event.target.dataset.value) {
         if (!!self.jsNinja()) {
           self.currentState(event.target.dataset.value);
-          self.currentTrivia(modal[self.length]);
-          self.length = self.length + 1;
+          self.currentTrivia(modal[self.length()]);
+          self.length(self.length() + 1);
         } else {
           alert("Please enter your name");
         }
