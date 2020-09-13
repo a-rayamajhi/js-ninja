@@ -2,11 +2,20 @@
   //See in Console; seed being loaded
   console.log("MODAL:  ", modal);
 
+  //TODO: Randomize and only pull list of 10 questions
+
   function AppViewModel() {
     var self = this;
     self.states = ["home", "trivia", "result", "mark-sheet"];
 
     // Place All Observables here
+    /**
+     * jsNinja: User
+     * currentState: current route
+     * currentTrivia: current question
+     * chosenItem: Clicked radio button of the trivia
+     * chosenItems: Store all user's answers list
+     */
     self.jsNinja = ko.observable();
     self.currentState = ko.observable();
     self.currentTrivia = ko.observable();
