@@ -1,19 +1,16 @@
 html,
 body {
   font-family: "Roboto Condensed", sans-serif;
-  color: #161616;
+  color: #3e4a59;
   scroll-behavior: smooth;
 }
 
 body {
-  height: 90vh;
+  height: 100vh;
 }
 
 .wrapper {
-  height: inherit;
-  display: flex;
-  justify-items: center;
-  align-items: center;
+  padding: 1rem 1rem 0 1rem;
 }
 
 .btn-outline-primary {
@@ -23,4 +20,55 @@ body {
 .btn-outline-primary:hover {
   background-color: #5172aa;
   border-color: #5172aa;
+}
+
+.logo-wrapper {
+  margin: 1.5rem auto 2rem;
+  text-align: center;
+}
+
+.wrapper .display-6 {
+  font-weight: 500;
+  margin-top: 1rem;
+}
+
+.container-fluid {
+  height: 76vh;
+  background-color: #f9fafc;
+  border-radius: 2rem 2rem 0 0;
+}
+
+.jsn-input-control {
+  border: none;
+  border-radius: 0;
+  background-color: #f0f3f7;
+  padding-left: 17px;
+  width: 100%;
+  height: 61px;
+}
+
+.jsn-input-control:active,
+.jsn-input-control:focus {
+  border-left: solid 5px #98d5fb;
+  padding-left: 12px;
+  outline: none;
+}
+
+.state-home {
+  height: inherit;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.state-home > .container {
+  max-width: 700px;
+}
+
+.btn-danger {
+  margin-top: 4rem;
+  padding: 1rem 2rem;
+}
+
+.container > .label {
+  margin-bottom: 0.5rem;
 }
