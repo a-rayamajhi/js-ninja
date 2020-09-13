@@ -434,19 +434,33 @@ progress {
   font-weight: 300;
   line-height: 1.2;
 }
+
 @media (min-width: 1200px) {
   .display-3 {
     font-size: 4rem;
   }
 }
+
 .display-4 {
-  font-size: calc(1.475rem + 2.7vw);
-  font-weight: 300;
-  line-height: 1.2;
+  position: absolute;
+  font-size: 2.5rem;
+  font-weight: 400;
+  line-height: 2.5;
+  width: 100%;
+  height: 100px;
+  left: 470px;
+  top: 100px;
+  color:#223465;
+
+}
+.belts{
+  float: right;
 }
 @media (min-width: 1200px) {
   .display-4 {
     font-size: 3.5rem;
+    width: 100%;
+ 
   }
 }
 .display-5 {
@@ -526,6 +540,7 @@ progress {
   font-size: 0.875em;
   color: #6c757d;
 }
+
 .container,
 .container-fluid,
 .container-lg,
@@ -538,6 +553,7 @@ progress {
   padding-left: 1rem;
   margin-right: auto;
   margin-left: auto;
+
 }
 @media (min-width: 576px) {
   .container,
@@ -1815,7 +1831,8 @@ progress {
 }
 .form-control {
   display: block;
-  width: 100%;
+  width: 450px;
+  height: 70px;
   min-height: calc(1.5em + 0.75rem + 2px);
   padding: 0.375rem 0.75rem;
   font-size: 1rem;
@@ -1830,6 +1847,12 @@ progress {
   appearance: none;
   border-radius: 0.25rem;
   transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  position: absolute;
+  left: 365px;
+  top: 270px;
+  border-left: 5px solid #98D5FB;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+
 }
 @media (prefers-reduced-motion: reduce) {
   .form-control {
@@ -2569,7 +2592,29 @@ textarea.form-control.is-invalid {
   border-radius: 0.25rem;
   transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
     border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
-}
+
+  }
+  .startBtn{
+   position: absolute;
+   width: 200px;
+   height: 70px;
+   left: 479px;
+   top: 400px; 
+   color: #FFFFFF;
+   background-color: #BC1F1F;
+   border: none;
+
+  }
+
+  .beltBtn{
+   position: absolute;
+   width: 150px;
+   height: 50px;
+   left: 510px;
+   top: 525px; 
+   font-weight: 700;
+  }
+
 @media (prefers-reduced-motion: reduce) {
   .btn {
     transition: none;
@@ -2590,14 +2635,14 @@ fieldset:disabled .btn {
   opacity: 0.65;
 }
 .btn-primary {
-  color: #fff;
-  background-color: #0d6efd;
-  border-color: #0d6efd;
+  color: #5172AA;
+  background-color: #FFFFFF;
+  border-color: #5172AA;
 }
 .btn-primary:hover {
   color: #fff;
-  background-color: #025ce2;
-  border-color: #0257d5;
+  background-color: #5172AA;
+  border-color: #5172AA;
 }
 .btn-check:focus + .btn-primary,
 .btn-primary:focus {
@@ -6038,6 +6083,11 @@ button.close {
 .mx-auto {
   margin-right: auto !important;
   margin-left: auto !important;
+  position: absolute;
+  width: 192px;
+  height: 106px;
+  left: 503px;
+  top: 35px;
 }
 .my-0 {
   margin-top: 0 !important;
