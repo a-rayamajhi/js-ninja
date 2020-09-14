@@ -22,7 +22,7 @@
 
   function AppViewModel() {
     const self = this,
-      COUNT = 2;
+      COUNT = 10;
     self.states = ["home", "trivia", "result", "mark-sheet"];
 
     // Place All Observables here
