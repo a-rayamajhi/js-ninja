@@ -106,11 +106,19 @@
             </div>
           </div>
         </div>
-      </div>
 
-      <!-- Result View -->
-      <div class="container" data-bind="visible: currentState() == 'result'">
-        Result
+        <!-- Result View -->
+        <div class="container" data-bind="visible: currentState() == 'result'">
+          <div>Score: <strong data-bind="text: score"></strong> out of 10</div>
+          <button
+            data-bind="click: toState"
+            data-value="home"
+            type="button"
+            class="btn btn-outline-danger"
+          >
+            Try Again
+          </button>
+        </div>
       </div>
     </div>
 
