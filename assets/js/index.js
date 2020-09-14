@@ -1,6 +1,7 @@
 (function () {
   //See in Console; seed being loaded
-  console.log("MODAL:  ", modal);
+  var mo = modal.slice(0, 3);
+  console.log("MODAL:  ", modal, mo);
 
   function randomizeTenQuestions(modal){
     positions = [];
@@ -26,7 +27,8 @@
   console.log(randomizeTenQuestions(modal));
 
   function AppViewModel() {
-    var self = this;
+    const self = this,
+      COUNT = 2;
     self.states = ["home", "trivia", "result", "mark-sheet"];
 
     // Place All Observables here
@@ -45,12 +47,32 @@
     self.length = ko.observable(0);
 
     self.toState = function (ctx, event) {
-      console.log(self.length, self.chosenItems);
+      console.log(self.chosenItems);
       if (!!event.target.dataset && !!event.target.dataset.value) {
         if (!!self.jsNinja()) {
-          self.currentState(event.target.dataset.value);
-          self.currentTrivia(modal[self.length()]);
-          self.length(self.length() + 1);
+          if (self.length() >= COUNT) {
+            if (event.target.dataset.value === "trivia") {
+              self.currentState("result");
+              if (!!self.chosenItem()) {
+                self.chosenItems.push(self.chosenItem());
+              }
+            }
+            if (event.target.dataset.value === "home") {
+              self.jsNinja(null);
+              self.currentState("home");
+              self.currentTrivia(null);
+              self.chosenItem(null);
+              self.chosenItems = [];
+              self.length(0);
+            }
+          } else {
+            self.currentState(event.target.dataset.value);
+            self.currentTrivia(mo[self.length()]);
+            if (!!self.chosenItem()) {
+              self.chosenItems.push(self.chosenItem());
+            }
+            self.length(self.length() + 1);
+          }
         } else {
           alert("Please enter your name");
         }
@@ -58,10 +80,6 @@
     };
 
     self.currentState("home");
-
-    self.chosenItem.subscribe(function (newValue) {
-      self.chosenItems.push(newValue);
-    });
 
     window.onbeforeunload = function () {
       if (self.currentState() !== "home") {
