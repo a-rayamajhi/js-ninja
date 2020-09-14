@@ -9,12 +9,15 @@ const modal = [
       },
       {
         name: "Compiled",
+        isCorrect: null,
       },
       {
         name: "Both",
+        isCorrect: null,
       },
       {
         name: "Neither",
+        isCorrect: null,
       },
     ],
   },
@@ -29,19 +32,21 @@ const modal = [
       },
       {
         name: "Compiled",
+        isCorrect: null,
       },
       {
         name: "Both",
+        isCorrect: null,
       },
       {
         name: "Neither",
+        isCorrect: null,
       },
     ],
   },
   {
     id: "3",
-    question:
-      "Which symbol does Javascript use to concatenate strings?",
+    question: "Which symbol does Javascript use to concatenate strings?",
     options: [
       {
         name: "-",
@@ -49,12 +54,15 @@ const modal = [
       },
       {
         name: "*",
+        isCorrect: null,
       },
       {
         name: "+",
+        isCorrect: null,
       },
       {
         name: "&",
+        isCorrect: null,
       },
     ],
   },
@@ -69,12 +77,15 @@ const modal = [
       },
       {
         name: "==",
+        isCorrect: null,
       },
       {
         name: "=",
+        isCorrect: null,
       },
       {
         name: "!=",
+        isCorrect: null,
       },
     ],
   },
@@ -85,9 +96,11 @@ const modal = [
     options: [
       {
         name: "Loops",
+        isCorrect: null,
       },
       {
         name: "Jumps",
+        isCorrect: null,
       },
       {
         name: "Conditionals",
@@ -95,6 +108,7 @@ const modal = [
       },
       {
         name: "Functions",
+        isCorrect: null,
       },
     ],
   },
@@ -105,12 +119,15 @@ const modal = [
     options: [
       {
         name: "False",
+        isCorrect: null,
       },
       {
         name: "Typeof",
+        isCorrect: null,
       },
       {
         name: "With",
+        isCorrect: null,
       },
       {
         name: "Int",
@@ -120,17 +137,19 @@ const modal = [
   },
   {
     id: "7",
-    question:
-      "In JavaScript, what is an ordered collection of values?",
+    question: "In JavaScript, what is an ordered collection of values?",
     options: [
       {
         name: "Float",
+        isCorrect: null,
       },
       {
         name: "Double",
+        isCorrect: null,
       },
       {
         name: "Index",
+        isCorrect: null,
       },
       {
         name: "Array",
@@ -149,12 +168,15 @@ const modal = [
       },
       {
         name: "Prototype object",
+        isCorrect: null,
       },
       {
         name: "Instance",
+        isCorrect: null,
       },
       {
         name: "Factory",
+        isCorrect: null,
       },
     ],
   },
@@ -165,9 +187,11 @@ const modal = [
     options: [
       {
         name: "Array dissemination",
+        isCorrect: null,
       },
       {
         name: "Array description",
+        isCorrect: null,
       },
       {
         name: "Array comprehension",
@@ -175,6 +199,7 @@ const modal = [
       },
       {
         name: "Array initialization",
+        isCorrect: null,
       },
     ],
   },
@@ -185,6 +210,7 @@ const modal = [
     options: [
       {
         name: "Variable",
+        isCorrect: null,
       },
       {
         name: "Object",
@@ -192,9 +218,11 @@ const modal = [
       },
       {
         name: "Function",
+        isCorrect: null,
       },
       {
         name: "Property",
+        isCorrect: null,
       },
     ],
   },
@@ -205,9 +233,11 @@ const modal = [
     options: [
       {
         name: "As functions",
+        isCorrect: null,
       },
       {
         name: "As methods",
+        isCorrect: null,
       },
       {
         name: "As expressions",
@@ -215,6 +245,7 @@ const modal = [
       },
       {
         name: "As constructors",
+        isCorrect: null,
       },
     ],
   },
@@ -225,6 +256,7 @@ const modal = [
     options: [
       {
         name: "While",
+        isCorrect: null,
       },
       {
         name: "Loops",
@@ -232,9 +264,11 @@ const modal = [
       },
       {
         name: "For loops",
+        isCorrect: null,
       },
       {
         name: "For each",
+        isCorrect: null,
       },
     ],
   },
@@ -245,12 +279,15 @@ const modal = [
     options: [
       {
         name: "Throw",
+        isCorrect: null,
       },
       {
         name: "Continue",
+        isCorrect: null,
       },
       {
         name: "Increment",
+        isCorrect: null,
       },
       {
         name: "Return",
@@ -265,6 +302,7 @@ const modal = [
     options: [
       {
         name: "Trap",
+        isCorrect: null,
       },
       {
         name: "Catch",
@@ -272,9 +310,11 @@ const modal = [
       },
       {
         name: "Capture",
+        isCorrect: null,
       },
       {
         name: "Try",
+        isCorrect: null,
       },
     ],
   },
@@ -285,23 +325,26 @@ const modal = [
     options: [
       {
         name: "var empty =  [ ];",
+        isCorrect: null,
       },
       {
         name: "var book = { “title:“author”: “name”: “David” };",
+        isCorrect: null,
       },
       {
-        name: "var book = { “main title”: “JavaScript”, author: { name: “David” } };",
+        name:
+          "var book = { “main title”: “JavaScript”, author: { name: “David” } };",
         isCorrect: true,
       },
       {
         name: "var book = { “main title”, author: { name: “David” } };",
+        isCorrect: null,
       },
     ],
   },
   {
     id: "16",
-    question:
-      "The values passed in to a javascript function are called:",
+    question: "The values passed in to a javascript function are called:",
     options: [
       {
         name: "Parameters",
@@ -309,12 +352,15 @@ const modal = [
       },
       {
         name: "Values",
+        isCorrect: null,
       },
       {
         name: "Extensions",
+        isCorrect: null,
       },
       {
         name: "Traits",
+        isCorrect: null,
       },
     ],
   },
@@ -325,9 +371,11 @@ const modal = [
     options: [
       {
         name: "Parameter",
+        isCorrect: null,
       },
       {
         name: "Constant",
+        isCorrect: null,
       },
       {
         name: "Global",
@@ -335,6 +383,7 @@ const modal = [
       },
       {
         name: "Namespace",
+        isCorrect: null,
       },
     ],
   },
@@ -345,6 +394,7 @@ const modal = [
     options: [
       {
         name: "Global",
+        isCorrect: null,
       },
       {
         name: "Namespace",
@@ -352,9 +402,11 @@ const modal = [
       },
       {
         name: "Class",
+        isCorrect: null,
       },
       {
         name: "Method",
+        isCorrect: null,
       },
     ],
   },
@@ -365,12 +417,15 @@ const modal = [
     options: [
       {
         name: "index()",
+        isCorrect: null,
       },
       {
         name: "subStr()",
+        isCorrect: null,
       },
       {
         name: "size()",
+        isCorrect: null,
       },
       {
         name: "length()",
@@ -380,11 +435,11 @@ const modal = [
   },
   {
     id: "20",
-    question:
-      "A keyword used to refer to an object from where it is called:",
+    question: "A keyword used to refer to an object from where it is called:",
     options: [
       {
         name: "$",
+        isCorrect: null,
       },
       {
         name: "this",
@@ -392,19 +447,21 @@ const modal = [
       },
       {
         name: "obj",
+        isCorrect: null,
       },
       {
         name: "var",
+        isCorrect: null,
       },
     ],
   },
   {
     id: "21",
-    question:
-      "A variable or object that has no value will return as:",
+    question: "A variable or object that has no value will return as:",
     options: [
       {
         name: "empty",
+        isCorrect: null,
       },
       {
         name: "null",
@@ -412,9 +469,11 @@ const modal = [
       },
       {
         name: "void",
+        isCorrect: null,
       },
       {
         name: "blank",
+        isCorrect: null,
       },
     ],
   },
@@ -425,9 +484,11 @@ const modal = [
     options: [
       {
         name: "boolean",
+        isCorrect: null,
       },
       {
         name: "if/else statement",
+        isCorrect: null,
       },
       {
         name: "switch statement",
@@ -435,22 +496,25 @@ const modal = [
       },
       {
         name: "case statement",
+        isCorrect: null,
       },
     ],
   },
   {
     id: "23",
-    question:
-      "Which of the following is a valid array creation statement?",
+    question: "Which of the following is a valid array creation statement?",
     options: [
       {
         name: "var arr = [];",
+        isCorrect: null,
       },
       {
         name: "var arr = [4,2,5,9,1];",
+        isCorrect: null,
       },
       {
         name: "var arr = new Array(6,2,5,3,7,8,2);",
+        isCorrect: null,
       },
       {
         name: "All of the above.",
@@ -460,14 +524,15 @@ const modal = [
   },
   {
     id: "24",
-    question:
-      "Which of the following is a valid object creation statement?",
+    question: "Which of the following is a valid object creation statement?",
     options: [
       {
         name: "var obj = {}",
+        isCorrect: null,
       },
       {
         name: "var obj = {fname:”John”,lname:”Doe”,dob:”01/01/1990”}",
+        isCorrect: null,
       },
       {
         name: "A and B",
@@ -475,13 +540,13 @@ const modal = [
       },
       {
         name: "None of the above.",
+        isCorrect: null,
       },
     ],
   },
   {
     id: "25",
-    question:
-      "What is the syntax for ‘not equal’ in Javascript?",
+    question: "What is the syntax for ‘not equal’ in Javascript?",
     options: [
       {
         name: "!=",
@@ -489,12 +554,15 @@ const modal = [
       },
       {
         name: "!==",
+        isCorrect: null,
       },
       {
         name: "!===",
+        isCorrect: null,
       },
       {
         name: "!",
+        isCorrect: null,
       },
     ],
   },
@@ -509,12 +577,15 @@ const modal = [
       },
       {
         name: "if(x!=”false”){ return true}",
+        isCorrect: null,
       },
       {
         name: "if(x is not true){ return true}",
+        isCorrect: null,
       },
       {
         name: "None of the above",
+        isCorrect: null,
       },
     ],
   },
@@ -525,19 +596,22 @@ const modal = [
     options: [
       {
         name: "+",
+        isCorrect: null,
       },
       {
         name: "**",
+        isCorrect: null,
       },
       {
         name: "&&",
+        isCorrect: null,
       },
       {
         name: "++",
         isCorrect: true,
       },
     ],
-  }, 
+  },
   {
     id: "28",
     question:
@@ -545,12 +619,15 @@ const modal = [
     options: [
       {
         name: "var re = str.substr(2);",
+        isCorrect: null,
       },
       {
         name: "var re = str.slice(4,5);",
+        isCorrect: null,
       },
       {
         name: "var re = str.indexOf(“Re”);",
+        isCorrect: null,
       },
       {
         name: "var re = str.substr(3,4);",
@@ -560,14 +637,15 @@ const modal = [
   },
   {
     id: "29",
-    question:
-      "What is the syntax for a single line comment in Javascript?",
+    question: "What is the syntax for a single line comment in Javascript?",
     options: [
       {
         name: "<!-- comment -->",
+        isCorrect: null,
       },
       {
         name: "// comment",
+        isCorrect: null,
       },
       {
         name: "-- comment",
@@ -575,6 +653,7 @@ const modal = [
       },
       {
         name: "/* comment */",
+        isCorrect: null,
       },
     ],
   },
@@ -585,12 +664,15 @@ const modal = [
     options: [
       {
         name: "<!-- comment block -->",
+        isCorrect: null,
       },
       {
         name: "// comment block",
+        isCorrect: null,
       },
       {
         name: "-- comment block",
+        isCorrect: null,
       },
       {
         name: "/* comment block */",

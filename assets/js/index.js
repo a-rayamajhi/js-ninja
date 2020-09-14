@@ -22,7 +22,7 @@
 
   function AppViewModel() {
     const self = this,
-      COUNT = 10;
+      COUNT = 3;
     self.states = ["home", "trivia", "result", "mark-sheet"];
 
     // Place All Observables here
@@ -40,56 +40,87 @@
     self.chosenItems = [];
     self.length = ko.observable(0);
     self.direction = ko.observable();
-    self.data = randomizeTenQuestions(modal);
+    self.data = ko.observableArray(randomizeTenQuestions(modal));
+
     self.score = ko.observable(0);
 
     self.toState = function (ctx, event) {
       if (!!event.target.dataset && !!event.target.dataset.value) {
         if (!!self.jsNinja()) {
-          if (self.length() >= COUNT) {
-            if (event.target.dataset.value === "trivia") {
-              self.currentState("result");
+          if (
+            event.target.dataset.direction !== "backwards" &&
+            self.length() >= COUNT
+          ) {
+            switch (event.target.dataset.value) {
+              case "trivia":
+                self.currentState("result");
+                if (!!self.chosenItem()) {
+                  self.chosenItems.push(self.chosenItem());
+                }
+                self.score(calculateScore());
+                break;
 
-              self.score(calculateScore());
-              if (!!self.chosenItem()) {
-                self.chosenItems.push(self.chosenItem());
-              }
+              case "try-again":
+                self.chosenItem(null);
+                self.chosenItems = [];
+                self.currentState("trivia");
+                self.currentTrivia(self.data()[0]);
+                self.length(1);
+                break;
+
+              case "reset":
+                self.chosenItem(null);
+                self.chosenItems = [];
+                self.currentState("trivia");
+                self.currentTrivia(self.data()[0]);
+                self.length(1);
+                break;
+
+              default:
+                self.currentState(event.target.dataset.value);
+                break;
             }
-            if (event.target.dataset.value === "home") {
-              self.jsNinja(null);
-              self.currentState("home");
-              self.currentTrivia(null);
-              self.chosenItem(null);
-              self.chosenItems = [];
-              self.length(0);
-              self.data = randomizeTenQuestions(modal);
-            }
+          } else if (event.target.dataset.value === "reset") {
+            self.jsNinja("");
+            self.chosenItem(null);
+            self.chosenItems = [];
+            self.currentState("home");
+            self.currentTrivia(self.data()[0]);
+            self.length(0);
+            self.data(randomizeTenQuestions(modal));
           } else {
             self.currentState(event.target.dataset.value);
             var pos = self.length();
-            if (!!self.chosenItem() && pos>0) {
-              self.chosenItems[pos-1]=(self.chosenItem());
+            if (!!self.chosenItem() && pos > 0) {
+              self.chosenItems[pos - 1] = self.chosenItem();
+              self.chosenItem(null);
             }
-            if(event.target.dataset.direction === "backwards" && pos>=1){
-              pos = pos -1;
+
+            if (event.target.dataset.direction === "backwards" && pos >= 1) {
+              pos = pos - 1;
             }
-            if(event.target.dataset.direction === "forwards"){
-              pos = pos +1;
+            if (event.target.dataset.direction === "forwards") {
+              pos = pos + 1;
             }
-            self.currentTrivia(self.data[pos-1]);
-            self.length(pos);
+            if (!!pos) {
+              self.currentTrivia(self.data()[pos - 1]);
+              self.length(pos);
+            } else {
+              self.currentTrivia(self.data()[0]);
+              self.length(1);
+            }
           }
         } else {
           alert("Please enter your name");
         }
+        console.log(self.chosenItems);
       }
     };
 
     self.currentState("home");
 
     function calculateScore() {
-      return self.chosenItems.filter((el) => el.hasOwnProperty("isCorrect"))
-        .length;
+      return self.chosenItems.filter((el) => !!el.isCorrect).length * 10;
     }
 
     window.onbeforeunload = function () {

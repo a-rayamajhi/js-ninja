@@ -34,9 +34,14 @@
     <div class="wrapper">
       <div class="logo-wrapper">
         <div>
-          <img src="assets/images/Logo.png" alt="Logo" />
+          <img
+            src="assets/images/Logo.png"
+            alt="Logo"
+            data-bind="click: toState"
+            data-value="home"
+          />
         </div>
-        <div class="display-6">JS NINJA</div>
+        <div class="title">JS NINJA</div>
       </div>
 
       <!-- Home State -->
@@ -54,7 +59,7 @@
                 data-value="trivia"
                 data-direction="forwards"
                 type="button"
-                class="btn btn-danger"
+                class="btn btn-danger btn-danger-overwrite"
               >
                 Start Trivia
               </button>
@@ -63,22 +68,35 @@
         </div>
 
         <!-- Trivia View -->
-        <div class="state-home" data-bind="visible: currentState() == 'trivia'">
-          <div class="container">
+        <div
+          class="state-trivia"
+          data-bind="visible: currentState() == 'trivia'"
+        >
+          <div class="header align-items">
+            <button
+              data-bind="click: toState"
+              data-value="reset"
+              type="button"
+              class="btn btn-danger"
+            >
+              Reset
+            </button>
+            <div
+              data-bind="text: length() ? length() : ''"
+              class="trivia-count"
+            ></div>
             <div>
               <strong data-bind="text: jsNinja"></strong>
             </div>
-            <div>
-              Trivia:
-              <strong data-bind="text: length() ? length() : ''"></strong>
-            </div>
-            <hr />
+          </div>
 
+          <hr />
+          <div class="trivia-main">
             <div class="container">
-              <div
+              <h5
                 class="question"
                 data-bind="text: currentTrivia() ? currentTrivia().question : ''"
-              ></div>
+              ></h5>
               <br />
               <div
                 data-bind="foreach: currentTrivia() ? currentTrivia().options : []"
@@ -93,47 +111,103 @@
                   <span data-bind="text: $data.name"></span>
                 </div>
               </div>
-              <hr />
-              <div class="row">
-                <div class="col-md-6">
-                  <button
-                  data-bind="click: toState"
-                  data-value="trivia"
-                  data-direction="backwards"
-                  type="button"
-                  class="btn btn-outline-secondary float left"
-                  >
-                  <i class="fas fa-angle-left"></i>
-                  Previous
-                  </button>
-                </div>
-                <div class="col-md-6">
-                  <button
-                  data-bind="click: toState"
-                  data-value="trivia"
-                  data-direction="forwards"
-                  type="button"
-                  class="btn btn-outline-success float-right"
-                  >
-                  Submit
-                  </button>
-                </div>
-              </div>
             </div>
+          </div>
+          <div class="footer align-items">
+            <button
+              data-bind="click: toState"
+              data-value="trivia"
+              data-direction="backwards"
+              type="button"
+              class="btn btn-outline-primary"
+            >
+              <i class="fas fa-angle-left"></i>
+              Previous
+            </button>
+
+            <button
+              data-bind="click: toState"
+              data-value="trivia"
+              data-direction="forwards"
+              type="button"
+              class="btn btn-outline-success"
+            >
+              Submit
+            </button>
           </div>
         </div>
 
         <!-- Result View -->
-        <div class="container" data-bind="visible: currentState() == 'result'">
-          <div>Score: <strong data-bind="text: score"></strong> out of 10</div>
-          <button
-            data-bind="click: toState"
-            data-value="home"
-            type="button"
-            class="btn btn-outline-danger"
-          >
-            Try Again
-          </button>
+        <div
+          class="state-result"
+          data-bind="visible: currentState() == 'result'"
+        >
+          <div class="main">
+            <div class="display-4">
+              Score: <span data-bind="text: score"></span>%
+            </div>
+          </div>
+          <div class="footer align-items">
+            <button
+              data-bind="click: toState"
+              data-value="try-again"
+              type="button"
+              class="btn btn-outline-primary"
+            >
+              Try Again
+            </button>
+            <button
+              data-bind="click: toState"
+              data-value="review"
+              type="button"
+              class="btn btn-outline-success"
+            >
+              See Correct Answers
+            </button>
+          </div>
+        </div>
+
+        <!-- Review Answers View -->
+        <div
+          class="state-result"
+          data-bind="visible: currentState() == 'review'"
+        >
+          <div class="correct-answers">
+            <div data-bind="foreach: data">
+              <div class="data-tile">
+                <h5 data-bind="text: question"></h5>
+                <div data-bind="foreach: options">
+                  <div>
+                    <!-- ko if: isCorrect -->
+                    <i class="far fa-dot-circle"></i>
+                    <!-- /ko -->
+                    <!-- ko ifnot: isCorrect -->
+                    <i class="far fa-circle"></i>
+                    <!-- /ko -->
+                    &nbsp;&nbsp;<span data-bind="text: name"></span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="footer align-items">
+            <button
+              data-bind="click: toState"
+              data-value="try-again"
+              type="button"
+              class="btn btn-outline-primary"
+            >
+              Try Again
+            </button>
+            <button
+              data-bind="click: toState"
+              data-value="reset"
+              type="button"
+              class="btn btn-danger"
+            >
+              Reset
+            </button>
+          </div>
         </div>
       </div>
     </div>
