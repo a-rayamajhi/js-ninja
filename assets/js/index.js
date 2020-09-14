@@ -39,6 +39,7 @@
     self.chosenItem = ko.observable();
     self.chosenItems = [];
     self.length = ko.observable(0);
+    self.direction = ko.observable();
     self.data = randomizeTenQuestions(modal);
     self.score = ko.observable(0);
 
@@ -65,11 +66,18 @@
             }
           } else {
             self.currentState(event.target.dataset.value);
-            self.currentTrivia(self.data[self.length()]);
-            if (!!self.chosenItem()) {
-              self.chosenItems.push(self.chosenItem());
+            var pos = self.length();
+            if (!!self.chosenItem() && pos>0) {
+              self.chosenItems[pos-1]=(self.chosenItem());
             }
-            self.length(self.length() + 1);
+            if(event.target.dataset.direction === "backwards" && pos>=1){
+              pos = pos -1;
+            }
+            if(event.target.dataset.direction === "forwards"){
+              pos = pos +1;
+            }
+            self.currentTrivia(self.data[pos-1]);
+            self.length(pos);
           }
         } else {
           alert("Please enter your name");

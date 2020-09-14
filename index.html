@@ -52,6 +52,7 @@
               <button
                 data-bind="click: toState"
                 data-value="trivia"
+                data-direction="forwards"
                 type="button"
                 class="btn btn-danger"
               >
@@ -93,15 +94,30 @@
                 </div>
               </div>
               <hr />
-              <div>
-                <button
+              <div class="row">
+                <div class="col-md-6">
+                  <button
                   data-bind="click: toState"
                   data-value="trivia"
+                  data-direction="backwards"
                   type="button"
-                  class="btn btn-outline-success"
-                >
+                  class="btn btn-outline-secondary float left"
+                  >
+                  <i class="fas fa-angle-left"></i>
+                  Previous
+                  </button>
+                </div>
+                <div class="col-md-6">
+                  <button
+                  data-bind="click: toState"
+                  data-value="trivia"
+                  data-direction="forwards"
+                  type="button"
+                  class="btn btn-outline-success float-right"
+                  >
                   Submit
-                </button>
+                  </button>
+                </div>
               </div>
             </div>
           </div>
