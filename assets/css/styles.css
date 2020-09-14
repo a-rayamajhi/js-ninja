@@ -1,17 +1,140 @@
 html,
 body {
   font-family: "Roboto Condensed", sans-serif;
-  color: #161616;
+  color: #3e4a59;
   scroll-behavior: smooth;
 }
 
 body {
-  height: 90vh;
+  height: 100vh;
 }
 
 .wrapper {
+  padding: 1rem 1rem 0 1rem;
+}
+
+.btn-outline-primary {
+  color: #5172aa;
+  border-color: #5172aa;
+}
+.btn-outline-primary:hover {
+  background-color: #5172aa;
+  border-color: #5172aa;
+}
+
+.logo-wrapper {
+  margin: 1.06rem;
+  text-align: center;
+}
+
+.logo-wrapper img {
+  width: 4.4rem;
+  cursor: pointer;
+}
+
+.title {
+  font-size: 1.9rem;
+  line-height: 2.2;
+}
+
+.container-fluid {
+  height: 78vh;
+  background-color: #f9fafc;
+  border-radius: 2rem 2rem 0 0;
+}
+
+.jsn-input-control {
+  border: none;
+  border-radius: 0;
+  background-color: #f0f3f7;
+  padding-left: 17px;
+  width: 100%;
+  height: 61px;
+}
+
+.jsn-input-control:active,
+.jsn-input-control:focus {
+  border-left: solid 5px #5172aa;
+  padding-left: 12px;
+  outline: none;
+}
+
+.state-result,
+.state-trivia {
+  height: inherit;
+}
+
+.trivia-main {
+  height: 74%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.main {
+  height: 88%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.main > .display-4 {
+  font-weight: 500;
+}
+
+.state-result > .main > .display-6 {
+  font-weight: 500;
+}
+
+.footer,
+.header {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 1rem;
+  align-items: center;
+}
+.header {
+  margin: 0 1rem;
+}
+
+.state-home {
   height: inherit;
   display: flex;
-  justify-items: center;
+  justify-content: center;
   align-items: center;
+}
+.state-home > .container {
+  max-width: 700px;
+}
+
+.btn-danger-overwrite {
+  margin-top: 4rem;
+  padding: 1rem 2rem;
+}
+
+.container > .label {
+  margin-bottom: 0.5rem;
+}
+
+.correct-answers {
+  height: 88%;
+  overflow-y: auto;
+}
+
+.data-tile {
+  padding: 2rem;
+  background-color: white;
+  border-radius: 15px;
+  margin: 1rem auto;
+}
+
+.trivia-count {
+  display: flex;
+  justify-content: center;
+  height: 40px;
+  width: 40px;
+  border-radius: 20px;
+  align-items: center;
+  background-color: #223465;
+  color: white;
 }
