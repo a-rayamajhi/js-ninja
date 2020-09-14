@@ -43,12 +43,12 @@
       <div class="container-fluid">
         <div class="state-home" data-bind="visible: currentState() == 'home'">
           <div class="container">
-            <div class="label">Please Enter Your Name</div>
-            <div>
-              <input class="jsn-input-control" data-bind="value: jsNinja" />
+
+            <div class="enterName">
+              <input class="jsn-input-control" data-bind="value: jsNinja" placeholder="Enter name"/>
             </div>
 
-            <div>
+            <div class="startBtn">
               <button
                 data-bind="click: toState"
                 data-value="trivia"
@@ -63,13 +63,15 @@
 
         <!-- Trivia View -->
         <div class="state-home" data-bind="visible: currentState() == 'trivia'">
-          <div class="container">
-            <div>
-              <strong data-bind="text: jsNinja"></strong>
+       
+           <div class="username"> 
+             <strong data-bind="text: jsNinja"></strong>
             </div>
-            <div>
-              Trivia:
+
+
+            <div class="pageNumbers">
               <strong data-bind="text: length() ? length() : ''"></strong>
+
             </div>
             <hr />
 
@@ -118,9 +120,10 @@
           >
             Try Again
           </button>
+          
         </div>
-      </div>
-    </div>
+  </div>
+  
 
     <script src="assets/js/modal.js"></script>
     <script src="assets/js/index.js"></script>

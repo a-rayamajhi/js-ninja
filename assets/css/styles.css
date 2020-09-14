@@ -72,3 +72,44 @@ body {
 .container > .label {
   margin-bottom: 0.5rem;
 }
+
+/* Nicole updates*/
+
+.enterName{
+  position: absolute;
+  width: 55%;
+  height: 15%;
+  top: 55%;
+  left: 20%;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+}
+
+.startBtn{
+  position: absolute;
+  width: 30;
+  top: 70%;
+  left: 40%;
+}
+
+.pageNumbers
+{
+position: absolute;
+left: 50%;
+top: 40%;
+border-radius: 100%;
+background-color:#223465;
+color: white;
+width: 40px;
+height: 40px;
+line-height: 40px;
+padding: 0;
+text-align: center;
+}
+
+.username{
+position: absolute;
+left: 10%;
+top: 30%;
+text-transform: uppercase;
+}
+/*Nicole updates end*/
