@@ -43,6 +43,7 @@
     self.data = ko.observableArray(randomizeTenQuestions(modal));
 
     self.score = ko.observable(0);
+    self.rank = ko.observable(null);
 
     self.toState = function (ctx, event) {
       if (!!event.target.dataset && !!event.target.dataset.value) {
@@ -54,10 +55,9 @@
             switch (event.target.dataset.value) {
               case "trivia":
                 self.currentState("result");
-                if (!!self.chosenItem()) {
-                  self.chosenItems.push(self.chosenItem());
-                }
-                self.score(calculateScore());
+                self.chosenItems[self.length()] = self.chosenItem();
+                self.score(getScorePercentage());
+                self.rank(getRank());
                 break;
 
               case "try-again":
@@ -91,7 +91,7 @@
           } else {
             self.currentState(event.target.dataset.value);
             var pos = self.length();
-            if (!!self.chosenItem() && pos > 0) {
+            if (pos > 0) {
               self.chosenItems[pos - 1] = self.chosenItem();
               self.chosenItem(null);
             }
@@ -120,7 +120,24 @@
     self.currentState("home");
 
     function calculateScore() {
-      return self.chosenItems.filter((el) => !!el.isCorrect).length * 10;
+      return self.chosenItems.filter((e) => e).filter((e) => !!e.isCorrect)
+        .length;
+    }
+
+    function getRank() {
+      var calculatedScore = calculateScore();
+
+      if (calculatedScore > 7) {
+        return "Expert";
+      } else if (calculatedScore > 5) {
+        return "Novice";
+      } else {
+        return "Beginner";
+      }
+    }
+
+    function getScorePercentage() {
+      return calculateScore() * 10;
     }
 
     window.onbeforeunload = function () {
