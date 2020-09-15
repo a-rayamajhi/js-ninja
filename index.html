@@ -143,8 +143,11 @@
           data-bind="visible: currentState() == 'result'"
         >
           <div class="main">
-            <div class="display-4">
-              Score: <span data-bind="text: score"></span>%
+            <div>
+              <div class="rank" data-bind="text: rank"></div>
+              <div class="display-6">
+                Score: <span data-bind="text: score"></span>%
+              </div>
             </div>
           </div>
           <div class="footer align-items">
