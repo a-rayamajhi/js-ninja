@@ -41,7 +41,3 @@ JS Ninja is a single page application using knockout.js. The functionality of th
 > Jonathan Roland - jdroland@my365.bellevue.edu
 
 ## <br />
-
-**Notes:**
-
-[Render stringified HTML](https://gomakethings.com/rendering-content-with-vanilla-javascript/)
