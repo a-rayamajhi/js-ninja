@@ -40,7 +40,7 @@ JS Ninja is a single page application using knockout.js. The functionality of th
 >
 > Jonathan Roland - jdroland@my365.bellevue.edu
 >
-> Wen. Please add your full name and email here
+> Wen-D - wleon@my365.bellevue.edu
 
 ## <br />
 
