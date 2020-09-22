@@ -13,6 +13,7 @@
      */
     for (var i = 0; i < 10; i++) {
       randomNum = positions[Math.floor(Math.random() * positions.length)];
+      modal[randomNum].answered = ko.observable(modal[randomNum].answered);
       questions.push(modal[randomNum]);
       index = positions.indexOf(randomNum);
       positions.splice(index, 1);
@@ -46,18 +47,24 @@
     self.rank = ko.observable(null);
 
     self.toState = function (ctx, event) {
+      
       if (!!event.target.dataset && !!event.target.dataset.value) {
+        
         if (!!self.jsNinja()) {
+
           if (
             event.target.dataset.direction !== "backwards" &&
             self.length() >= COUNT
           ) {
             switch (event.target.dataset.value) {
               case "trivia":
+                self.chosenItems.forEach(checkItems);
+                self.data.valueHasMutated()
                 self.currentState("result");
                 self.chosenItems[self.length()] = self.chosenItem();
                 self.score(getScorePercentage());
                 self.rank(getRank());
+                
                 break;
 
               case "try-again":
@@ -77,6 +84,7 @@
                 break;
 
               default:
+                
                 self.currentState(event.target.dataset.value);
                 break;
             }
@@ -89,6 +97,7 @@
             self.length(0);
             self.data(randomizeTenQuestions(modal));
           } else {
+            
             self.currentState(event.target.dataset.value);
             var pos = self.length();
             if (pos > 0) {
@@ -114,6 +123,23 @@
           alert("Please enter your name");
         }
         console.log(self.chosenItems);
+      }else{
+        
+        if( event.isTrusted ){ // case for skip button
+          if(self.length() >= COUNT){
+            self.chosenItems.forEach(checkItems);
+            self.data.valueHasMutated()
+            self.currentState("result");
+            self.chosenItems[self.length()] = self.chosenItem();
+            self.score(getScorePercentage());
+            self.rank(getRank());
+          }else{
+            var pos = self.length();
+            pos = pos + 1;
+            self.currentTrivia(self.data()[pos - 1]);
+            self.length(pos);
+          }
+        }
       }
     };
 
@@ -124,6 +150,22 @@
         .length;
     }
 
+    function checkItems(item){
+      console.log('self.data')
+      console.log(self.data())
+      if(null != item && item.isCorrect){
+        for (var i = 0; i < 10; i++) {
+
+          for (var j = 0; j < 4; j++) {
+            if( self.data()[i].options[j].name == item.name ){
+              self.data()[i].answered(true);
+              break;
+            }
+          }
+          
+        }
+      }
+    }
     function getRank() {
       var calculatedScore = calculateScore();
 
