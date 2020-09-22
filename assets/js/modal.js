@@ -20,6 +20,7 @@ const modal = [
         isCorrect: null,
       },
     ],
+    answered: null,
   },
   {
     id: "2",
@@ -43,6 +44,7 @@ const modal = [
         isCorrect: null,
       },
     ],
+    answered: null,
   },
   {
     id: "3",
@@ -65,6 +67,7 @@ const modal = [
         isCorrect: null,
       },
     ],
+    answered: null,
   },
   {
     id: "4",
@@ -88,6 +91,7 @@ const modal = [
         isCorrect: null,
       },
     ],
+    answered: null,
   },
   {
     id: "5",
@@ -111,6 +115,7 @@ const modal = [
         isCorrect: null,
       },
     ],
+    answered: null,
   },
   {
     id: "6",
@@ -134,6 +139,7 @@ const modal = [
         isCorrect: true,
       },
     ],
+    answered: null,
   },
   {
     id: "7",
@@ -156,6 +162,7 @@ const modal = [
         isCorrect: true,
       },
     ],
+    answered: null,
   },
   {
     id: "8",
@@ -179,6 +186,7 @@ const modal = [
         isCorrect: null,
       },
     ],
+    answered: null,
   },
   {
     id: "9",
@@ -202,6 +210,7 @@ const modal = [
         isCorrect: null,
       },
     ],
+    answered: null,
   },
   {
     id: "10",
@@ -225,6 +234,7 @@ const modal = [
         isCorrect: null,
       },
     ],
+    answered: null,
   },
   {
     id: "11",
@@ -248,6 +258,7 @@ const modal = [
         isCorrect: null,
       },
     ],
+    answered: null,
   },
   {
     id: "12",
@@ -271,6 +282,7 @@ const modal = [
         isCorrect: null,
       },
     ],
+    answered: null,
   },
   {
     id: "13",
@@ -294,6 +306,7 @@ const modal = [
         isCorrect: true,
       },
     ],
+    answered: null,
   },
   {
     id: "14",
@@ -317,6 +330,7 @@ const modal = [
         isCorrect: null,
       },
     ],
+    answered: null,
   },
   {
     id: "15",
@@ -341,6 +355,7 @@ const modal = [
         isCorrect: null,
       },
     ],
+    answered: null,
   },
   {
     id: "16",
@@ -363,6 +378,7 @@ const modal = [
         isCorrect: null,
       },
     ],
+    answered: null,
   },
   {
     id: "17",
@@ -386,6 +402,7 @@ const modal = [
         isCorrect: null,
       },
     ],
+    answered: null,
   },
   {
     id: "18",
@@ -409,6 +426,7 @@ const modal = [
         isCorrect: null,
       },
     ],
+    answered: null,
   },
   {
     id: "19",
@@ -432,6 +450,7 @@ const modal = [
         isCorrect: true,
       },
     ],
+    answered: null,
   },
   {
     id: "20",
@@ -454,6 +473,7 @@ const modal = [
         isCorrect: null,
       },
     ],
+    answered: null,
   },
   {
     id: "21",
@@ -476,6 +496,7 @@ const modal = [
         isCorrect: null,
       },
     ],
+    answered: null,
   },
   {
     id: "22",
@@ -499,6 +520,7 @@ const modal = [
         isCorrect: null,
       },
     ],
+    answered: null,
   },
   {
     id: "23",
@@ -521,6 +543,7 @@ const modal = [
         isCorrect: true,
       },
     ],
+    answered: null,
   },
   {
     id: "24",
@@ -543,6 +566,7 @@ const modal = [
         isCorrect: null,
       },
     ],
+    answered: null,
   },
   {
     id: "25",
@@ -565,6 +589,7 @@ const modal = [
         isCorrect: null,
       },
     ],
+    answered: null,
   },
   {
     id: "26",
@@ -588,6 +613,7 @@ const modal = [
         isCorrect: null,
       },
     ],
+    answered: null,
   },
   {
     id: "27",
@@ -611,6 +637,7 @@ const modal = [
         isCorrect: true,
       },
     ],
+    answered: null,
   },
   {
     id: "28",
@@ -634,6 +661,7 @@ const modal = [
         isCorrect: true,
       },
     ],
+    answered: null,
   },
   {
     id: "29",
@@ -656,6 +684,7 @@ const modal = [
         isCorrect: null,
       },
     ],
+    answered: null,
   },
   {
     id: "30",
@@ -679,5 +708,6 @@ const modal = [
         isCorrect: true,
       },
     ],
+    answered: null,
   },
 ];
