@@ -179,11 +179,11 @@
       var calculatedScore = calculateScore();
 
       if (calculatedScore > 7) {
-        return "Expert";
+        return "JS-Ninja Expert";
       } else if (calculatedScore > 5) {
-        return "Novice";
+        return "JS-Ninja Novice";
       } else {
-        return "Beginner";
+        return "JS-Ninja Beginner";
       }
     }
 
@@ -191,6 +191,7 @@
       return calculateScore() * 10;
     }
 
+    
     window.onbeforeunload = function () {
       if (self.currentState() !== "home") {
         return true;

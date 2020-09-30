@@ -17,6 +17,8 @@
     <script src="vendor/js/popper.min.js"></script>
     <script src="vendor/js/v5.bootstrap.min.js"></script>
     <script src="vendor/js/knockout.min.js"></script>
+
+    
     <!------------->
 
     <link rel="stylesheet" href="assets/css/styles.css" />
@@ -54,13 +56,12 @@
             </div>
 
             <div>
-              <button
-                data-bind="click: toState"
+              <button data-bind="click: toState"
                 data-value="trivia"
                 data-direction="forwards"
-                type="button"
+                type="button" 
                 class="btn btn-danger btn-danger-overwrite"
-              >
+                >
                 Start Trivia
               </button>
             </div>
@@ -79,6 +80,7 @@
               type="button"
               class="btn btn-danger"
             >
+            <i class="fas fa-minus-circle"></i>
               Reset
             </button>
             <div
@@ -89,8 +91,8 @@
               <a href="javascript:void(0);" data-bind="click: toState" type="button" class="btn btn-skip"><i class="fas fa-chevron-right"></i></a>
             </div>
           </div>
-          <div class="justify-content-flex-end">
-            <strong data-bind="text: jsNinja"></strong>
+          <div class="name justify-content-flex-end">
+            Candidate:&nbsp;<strong data-bind="text: jsNinja"></strong>
           </div>
 
           
@@ -147,25 +149,32 @@
           data-bind="visible: currentState() == 'result'"
         >
           <div class="header align-items">
-            <button
+           
+             <button
               data-bind="click: toState"
               data-value="reset"
               type="button"
               class="btn btn-danger"
             >
+            <i class="fas fa-minus-circle"></i>
               Reset
             </button>
-            <div class="justify-content-flex-end">
-              <strong data-bind="text: jsNinja"></strong>
+            <div class="name justify-content-flex-end">
+              Candidate:&nbsp;<strong data-bind="text: jsNinja"></strong>
             </div>
           </div>
-          
+        
           <div class="main">
-            <div>
-              <div class="rank" data-bind="text: rank"></div>
-              <div class="display-6">
+        
+            <div class="text-center container"><br /><br /><h1>Rank</h1>
+          
+              <div class="percentage">
                 Score: <span data-bind="text: score"></span>%
               </div>
+
+              <div data-bind="css: { rank0: score() === 0, rank1: score() === 10, rank2: score() === 20, rank3: score() === 30, rank4: score() === 40, rank5: score() === 50, rank6: score() === 60, rank7: score() === 70, rank8: score() === 80, rank9: score() === 90,rank10: score() === 100   }">
+                <div data-bind="text: rank"></div>
+             </div>
             </div>
           </div>
           <div class="footer align-items">
@@ -200,10 +209,11 @@
             type="button"
             class="btn btn-danger"
           >
+          <i class="fas fa-minus-circle"></i>
             Reset
           </button>
-          <div class="justify-content-flex-end">
-            <strong data-bind="text: jsNinja"></strong>
+          <div class="name justify-content-flex-end">
+            Candidate:&nbsp;<strong data-bind="text: jsNinja"></strong>
           </div>
         </div>
 
@@ -262,6 +272,7 @@
             type="button"
             class="btn btn-danger"
           >
+          <i class="fas fa-minus-circle"></i>
             Reset
           </button>
         </div>
