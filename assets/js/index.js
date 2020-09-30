@@ -14,6 +14,7 @@
     for (var i = 0; i < 10; i++) {
       randomNum = positions[Math.floor(Math.random() * positions.length)];
       modal[randomNum].answered = ko.observable(modal[randomNum].answered);
+      modal[randomNum].userAnswer = ko.observable(modal[randomNum].userAnswer);
       questions.push(modal[randomNum]);
       index = positions.indexOf(randomNum);
       positions.splice(index, 1);
@@ -149,17 +150,30 @@
 
     function checkItems(item) {
       console.log("self.data");
-      console.log(self.data());
+      //console.log(self.data());
       if (null != item && item.isCorrect) {
         for (var i = 0; i < 10; i++) {
           for (var j = 0; j < 4; j++) {
-            if (self.data()[i].options[j].name == item.name) {
+            if (self.data()[i].options[j].name == item.name) {   
               self.data()[i].answered(true);
               break;
             }
           }
         }
       }
+      	      //////////////////////////////////
+              if (null != item) {
+                for (var i = 0; i < 10; i++) {
+                  for (var j = 0; j < 4; j++) {
+                    if (self.data()[i].options[j].name == item.name) {   
+                      self.data()[i].userAnswer(item.name);
+                      break;
+                    }
+                    
+                  }
+                }
+              }
+              ////////////////////////////////////
     }
     function getRank() {
       var calculatedScore = calculateScore();

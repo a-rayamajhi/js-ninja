@@ -21,6 +21,7 @@ const modal = [
       },
     ],
     answered: null,
+    userAnswer: "",
   },
   {
     id: "2",
@@ -45,6 +46,7 @@ const modal = [
       },
     ],
     answered: null,
+    userAnswer: "",
   },
   {
     id: "3",
@@ -68,6 +70,7 @@ const modal = [
       },
     ],
     answered: null,
+    userAnswer: "",
   },
   {
     id: "4",
@@ -92,6 +95,7 @@ const modal = [
       },
     ],
     answered: null,
+    userAnswer: "",
   },
   {
     id: "5",
@@ -116,6 +120,7 @@ const modal = [
       },
     ],
     answered: null,
+    userAnswer: "",
   },
   {
     id: "6",
@@ -140,6 +145,7 @@ const modal = [
       },
     ],
     answered: null,
+    userAnswer: "",
   },
   {
     id: "7",
@@ -163,6 +169,7 @@ const modal = [
       },
     ],
     answered: null,
+    userAnswer: "",
   },
   {
     id: "8",
@@ -187,6 +194,7 @@ const modal = [
       },
     ],
     answered: null,
+    userAnswer: "",
   },
   {
     id: "9",
@@ -211,6 +219,7 @@ const modal = [
       },
     ],
     answered: null,
+    userAnswer: "",
   },
   {
     id: "10",
@@ -235,6 +244,7 @@ const modal = [
       },
     ],
     answered: null,
+    userAnswer: "",
   },
   {
     id: "11",
@@ -259,6 +269,7 @@ const modal = [
       },
     ],
     answered: null,
+    userAnswer: "",
   },
   {
     id: "12",
@@ -283,6 +294,7 @@ const modal = [
       },
     ],
     answered: null,
+    userAnswer: "",
   },
   {
     id: "13",
@@ -307,6 +319,7 @@ const modal = [
       },
     ],
     answered: null,
+    userAnswer: "",
   },
   {
     id: "14",
@@ -331,6 +344,7 @@ const modal = [
       },
     ],
     answered: null,
+    userAnswer: "",
   },
   {
     id: "15",
@@ -356,6 +370,7 @@ const modal = [
       },
     ],
     answered: null,
+    userAnswer: "",
   },
   {
     id: "16",
@@ -379,6 +394,7 @@ const modal = [
       },
     ],
     answered: null,
+    userAnswer: "",
   },
   {
     id: "17",
@@ -403,6 +419,7 @@ const modal = [
       },
     ],
     answered: null,
+    userAnswer: "",
   },
   {
     id: "18",
@@ -427,6 +444,7 @@ const modal = [
       },
     ],
     answered: null,
+    userAnswer: "",
   },
   {
     id: "19",
@@ -451,6 +469,7 @@ const modal = [
       },
     ],
     answered: null,
+    userAnswer: "",
   },
   {
     id: "20",
@@ -474,6 +493,7 @@ const modal = [
       },
     ],
     answered: null,
+    userAnswer: "",
   },
   {
     id: "21",
@@ -497,6 +517,7 @@ const modal = [
       },
     ],
     answered: null,
+    userAnswer: "",
   },
   {
     id: "22",
@@ -521,6 +542,7 @@ const modal = [
       },
     ],
     answered: null,
+    userAnswer: "",
   },
   {
     id: "23",
@@ -544,6 +566,7 @@ const modal = [
       },
     ],
     answered: null,
+    userAnswer: "",
   },
   {
     id: "24",
@@ -567,6 +590,7 @@ const modal = [
       },
     ],
     answered: null,
+    userAnswer: "",
   },
   {
     id: "25",
@@ -590,6 +614,7 @@ const modal = [
       },
     ],
     answered: null,
+    userAnswer: "",
   },
   {
     id: "26",
@@ -614,6 +639,7 @@ const modal = [
       },
     ],
     answered: null,
+    userAnswer: "",
   },
   {
     id: "27",
@@ -638,6 +664,7 @@ const modal = [
       },
     ],
     answered: null,
+    userAnswer: "",
   },
   {
     id: "28",
@@ -662,6 +689,7 @@ const modal = [
       },
     ],
     answered: null,
+    userAnswer: "",
   },
   {
     id: "29",
@@ -685,6 +713,7 @@ const modal = [
       },
     ],
     answered: null,
+    userAnswer: "",
   },
   {
     id: "30",
@@ -709,5 +738,6 @@ const modal = [
       },
     ],
     answered: null,
+    userAnswer: "",
   },
 ];
