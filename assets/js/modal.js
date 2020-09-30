@@ -701,11 +701,11 @@ const modal = [
       },
       {
         name: "// comment",
-        isCorrect: null,
+        isCorrect: true,
       },
       {
         name: "-- comment",
-        isCorrect: true,
+        isCorrect: null,
       },
       {
         name: "/* comment */",

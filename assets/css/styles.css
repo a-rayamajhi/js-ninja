@@ -172,14 +172,14 @@ body {
   color: white;
 }
 
-.state{
+.state {
   max-width: 550px;
   margin: auto;
 }
-.alert-wrapper{
+.alert-wrapper {
   overflow: hidden;
 }
-.alert{
+.alert {
   max-width: 90px;
   text-align: center;
   right: 0px;
@@ -188,78 +188,73 @@ body {
   float: right;
   border-radius: 50px;
 }
-svg{
+svg {
   margin-right: 10px;
 }
-.fa-check{
-  color: #155724
+.fa-check {
+  color: #155724;
 }
 .fa-times-circle {
   color: red;
 }
-.your-answer{
+.your-answer {
   font-weight: bold;
   display: block;
-} 
-=======
-
+}
 
 /*Nicole added 
 Name position
 Score position
 */
 .name {
-position: absolute;
-text-transform: uppercase;
-font-family: 'Roboto Condensed', sans-serif;
-font-weight: 300;
-width: 98px;
-height: 100px;
-font-size: 1.3rem;
-left: 90px;
-top: 135px;
+  position: absolute;
+  text-transform: uppercase;
+  font-family: "Roboto Condensed", sans-serif;
+  font-weight: 300;
+  width: 98px;
+  height: 100px;
+  font-size: 1.3rem;
+  left: 90px;
+  top: 135px;
 }
 
 .percentage {
-position: absolute;
-width: 400px;
-height: 70px;
-left: 25%;
-top: 40%;
-font-family: 'Roboto Condensed', sans-serif;
-font-style: normal;
-font-weight: 700;
-font-size: 60px;
-line-height: 70px;
-text-align: center;
-color: #223465;
+  position: absolute;
+  width: 400px;
+  height: 70px;
+  left: 25%;
+  top: 40%;
+  font-family: "Roboto Condensed", sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 60px;
+  line-height: 70px;
+  text-align: center;
+  color: #223465;
 }
 
-.rank0{
+.rank0 {
   color: #212121;
-  background-color:white;
+  background-color: white;
   font-size: 3rem;
   width: 700px;
   height: 90px;
   padding: 2%;
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
-  
- 
 }
 
-.rank1{
+.rank1 {
   color: #212121;
-  background-color:#EBCC2A;;
+  background-color: #ebcc2a;
   font-size: 3rem;
   width: 700px;
   height: 90px;
   padding: 2%;
-  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25)); 
- 
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
 }
-.rank2{
+.rank2 {
   color: #212121;
-  background-color:#EBCC2A;;
+  background-color: #ebcc2a;
   font-size: 3rem;
   width: 700px;
   height: 90px;
@@ -269,7 +264,7 @@ color: #223465;
 
 .rank3 {
   color: #212121;
-  background-color:#EB872A;
+  background-color: #eb872a;
   font-size: 3rem;
   width: 700px;
   height: 90px;
@@ -277,10 +272,9 @@ color: #223465;
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
 }
 
-
 .rank4 {
   color: #212121;
-  background-color:#35A42C;
+  background-color: #35a42c;
   font-size: 3rem;
   width: 700px;
   height: 90px;
@@ -290,7 +284,7 @@ color: #223465;
 
 .rank5 {
   color: white;
-  background-color:#2C8EA4;
+  background-color: #2c8ea4;
   font-size: 3rem;
   width: 700px;
   height: 90px;
@@ -300,7 +294,7 @@ color: #223465;
 
 .rank6 {
   color: white;
-  background-color:#5452D2;
+  background-color: #5452d2;
   font-size: 3rem;
   width: 700px;
   height: 90px;
@@ -310,7 +304,7 @@ color: #223465;
 
 .rank7 {
   color: white;
-  background-color:#BC1F1F;
+  background-color: #bc1f1f;
   font-size: 3rem;
   width: 700px;
   height: 90px;
@@ -320,7 +314,7 @@ color: #223465;
 
 .rank8 {
   color: white;
-  background-color:#212121;
+  background-color: #212121;
   font-size: 3rem;
   width: 700px;
   height: 90px;
@@ -328,10 +322,9 @@ color: #223465;
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
 }
 
-
 .rank8 {
   color: white;
-  background-color:#8B4818;
+  background-color: #8b4818;
   font-size: 3rem;
   width: 700px;
   height: 90px;
@@ -341,15 +334,15 @@ color: #223465;
 
 .rank9 {
   color: white;
-  background-color:#212121;
+  background-color: #212121;
   font-size: 3rem;
   width: 700px;
   height: 90px;
   padding: 2%;
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
 }
-.rank10{
-  color:  #BC1F1F;
+.rank10 {
+  color: #bc1f1f;
   background-color: #212121;
   height: 500px;
   font-size: 3rem;
@@ -359,14 +352,13 @@ color: #223465;
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
 }
 
-.rank10:after{
-    content:"";
-    position: absolute;
-    z-index: -1;
-    top: 0;
-    bottom: 0;
-    left: 87%;
-    border-right: 20px solid #BC1F1F;
-    transform: translate(-50%);
+.rank10:after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  bottom: 0;
+  left: 87%;
+  border-right: 20px solid #bc1f1f;
+  transform: translate(-50%);
 }
-
