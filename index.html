@@ -72,7 +72,7 @@
                 data-value="trivia"
                 data-direction="forwards"
                 type="button" 
-                class="btn btn-danger btn-danger-overwrite"
+                class="btn btn-danger btn-danger-overwrite" data-toggle="tooltip" data-placement="bottom" title="Press to start"
                 >
                 Start Trivia
               </button>
@@ -90,7 +90,7 @@
               data-bind="click: toState"
               data-value="reset"
               type="button"
-              class="btn btn-danger"
+              class="btn btn-danger" data-toggle="tooltip" data-placement="bottom" title="Go back to main menu"
             >
             <i class="fas fa-minus-circle"></i>
               Reset
@@ -100,7 +100,7 @@
               class="trivia-count"
             ></div>
             <div>
-              <a href="javascript:void(0);" data-bind="click: toState" type="button" class="btn btn-skip"><i class="fas fa-chevron-right"></i></a>
+              <a href="javascript:void(0);" data-bind="click: toState" type="button" class="btn btn-skip" data-toggle="tooltip" data-placement="bottom" title="Skip Question"><i class="fas fa-chevron-right"></i></a>
             </div>
           </div>
           <div class="name justify-content-flex-end">
@@ -137,7 +137,7 @@
               data-value="trivia"
               data-direction="backwards"
               type="button"
-              class="btn btn-outline-primary"
+              class="btn btn-outline-primary" data-toggle="tooltip" data-placement="bottom" title="Back to previous question"
             >
               <i class="fas fa-angle-left"></i>
               Previous
@@ -148,7 +148,7 @@
               data-value="trivia"
               data-direction="forwards"
               type="button"
-              class="btn btn-outline-success"
+              class="btn btn-outline-success" data-toggle="tooltip" data-placement="bottom" title="Submit final answer"
             >
               Submit
             </button>
@@ -166,7 +166,7 @@
               data-bind="click: toState"
               data-value="reset"
               type="button"
-              class="btn btn-danger"
+              class="btn btn-danger" data-toggle="tooltip" data-placement="bottom" title="Go back to main menu"
             >
             <i class="fas fa-minus-circle"></i>
               Reset
@@ -194,7 +194,7 @@
               data-bind="click: toState"
               data-value="try-again"
               type="button"
-              class="btn btn-outline-primary"
+              class="btn btn-outline-primary" data-toggle="tooltip" data-placement="bottom" title="Back to first question"
             >
               Try Again
             </button>
@@ -202,7 +202,7 @@
               data-bind="click: toState"
               data-value="review"
               type="button"
-              class="btn btn-outline-success"
+              class="btn btn-outline-success" data-toggle="tooltip" data-placement="bottom" title="View Answers"
             >
               See Correct Answers
             </button>
@@ -219,7 +219,7 @@
             data-bind="click: toState"
             data-value="reset"
             type="button"
-            class="btn btn-danger"
+            class="btn btn-danger" data-toggle="tooltip" data-placement="bottom" title="Back to main menu"
           >
           <i class="fas fa-minus-circle"></i>
             Reset
@@ -274,7 +274,7 @@
             data-bind="click: toState"
             data-value="try-again"
             type="button"
-            class="btn btn-outline-primary"
+            class="btn btn-outline-primary" data-toggle="tooltip" data-placement="bottom" title="Back to first question"
           >
             Try Again
           </button>
@@ -282,7 +282,7 @@
             data-bind="click: toState"
             data-value="reset"
             type="button"
-            class="btn btn-danger"
+            class="btn btn-danger" data-toggle="tooltip" data-placement="bottom" title="Back to main menu"
           >
           <i class="fas fa-minus-circle"></i>
             Reset
