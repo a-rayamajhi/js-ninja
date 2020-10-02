@@ -20,8 +20,8 @@ const modal = [
         isCorrect: null,
       },
     ],
-    answered: null,
-    userAnswer: "",
+    answered: false,
+    userAnswer: false,
   },
   {
     id: "2",
@@ -45,8 +45,8 @@ const modal = [
         isCorrect: null,
       },
     ],
-    answered: null,
-    userAnswer: "",
+    answered: false,
+    userAnswer: false,
   },
   {
     id: "3",
@@ -69,8 +69,8 @@ const modal = [
         isCorrect: null,
       },
     ],
-    answered: null,
-    userAnswer: "",
+    answered: false,
+    userAnswer: false,
   },
   {
     id: "4",
@@ -94,11 +94,11 @@ const modal = [
         isCorrect: null,
       },
     ],
-    answered: null,
-    userAnswer: "",
+    answered: false,
+    userAnswer: false,
   },
   {
-    id: "5",
+    id: "5", //////****************************************** */
     question:
       "Statements that make the JavaScript interpreter execute or skip other statements depending on the value of an expression.",
     options: [
@@ -119,8 +119,8 @@ const modal = [
         isCorrect: null,
       },
     ],
-    answered: null,
-    userAnswer: "",
+    answered: false,
+    userAnswer: false,
   },
   {
     id: "6",
@@ -144,8 +144,8 @@ const modal = [
         isCorrect: true,
       },
     ],
-    answered: null,
-    userAnswer: "",
+    answered: false,
+    userAnswer: false,
   },
   {
     id: "7",
@@ -168,8 +168,8 @@ const modal = [
         isCorrect: true,
       },
     ],
-    answered: null,
-    userAnswer: "",
+    answered: false,
+    userAnswer: false,
   },
   {
     id: "8",
@@ -193,8 +193,8 @@ const modal = [
         isCorrect: null,
       },
     ],
-    answered: null,
-    userAnswer: "",
+    answered: false,
+    userAnswer: false,
   },
   {
     id: "9",
@@ -218,8 +218,8 @@ const modal = [
         isCorrect: null,
       },
     ],
-    answered: null,
-    userAnswer: "",
+    answered: false,
+    userAnswer: false,
   },
   {
     id: "10",
@@ -243,11 +243,11 @@ const modal = [
         isCorrect: null,
       },
     ],
-    answered: null,
-    userAnswer: "",
+    answered: false,
+    userAnswer: false,
   },
   {
-    id: "11",
+    id: "11", ///*************************** */
     question:
       "JavaScript functions can be invoked in four ways, which of the following is not the right way to invoke a function?",
     options: [
@@ -268,11 +268,11 @@ const modal = [
         isCorrect: null,
       },
     ],
-    answered: null,
-    userAnswer: "",
+    answered: false,
+    userAnswer: false,
   },
   {
-    id: "12",
+    id: "12", /****************** */
     question:
       "In JavaScript, what are those that bend the path back upon itself to repeat portions of code?",
     options: [
@@ -293,8 +293,8 @@ const modal = [
         isCorrect: null,
       },
     ],
-    answered: null,
-    userAnswer: "",
+    answered: false,
+    userAnswer: false,
   },
   {
     id: "13",
@@ -318,8 +318,8 @@ const modal = [
         isCorrect: true,
       },
     ],
-    answered: null,
-    userAnswer: "",
+    answered: false,
+    userAnswer: false,
   },
   {
     id: "14",
@@ -343,11 +343,11 @@ const modal = [
         isCorrect: null,
       },
     ],
-    answered: null,
-    userAnswer: "",
+    answered: false,
+    userAnswer: false,
   },
   {
-    id: "15",
+    id: "15", //////////////************
     question:
       "Which one in the following is the right way to create an object in JavaScript?",
     options: [
@@ -369,8 +369,8 @@ const modal = [
         isCorrect: null,
       },
     ],
-    answered: null,
-    userAnswer: "",
+    answered: false,
+    userAnswer: false,
   },
   {
     id: "16",
@@ -393,8 +393,8 @@ const modal = [
         isCorrect: null,
       },
     ],
-    answered: null,
-    userAnswer: "",
+    answered: false,
+    userAnswer: false,
   },
   {
     id: "17",
@@ -418,8 +418,8 @@ const modal = [
         isCorrect: null,
       },
     ],
-    answered: null,
-    userAnswer: "",
+    answered: false,
+    userAnswer: false,
   },
   {
     id: "18",
@@ -443,8 +443,8 @@ const modal = [
         isCorrect: null,
       },
     ],
-    answered: null,
-    userAnswer: "",
+    answered: false,
+    userAnswer: false,
   },
   {
     id: "19",
@@ -468,8 +468,8 @@ const modal = [
         isCorrect: true,
       },
     ],
-    answered: null,
-    userAnswer: "",
+    answered: false,
+    userAnswer: false,
   },
   {
     id: "20",
@@ -492,8 +492,8 @@ const modal = [
         isCorrect: null,
       },
     ],
-    answered: null,
-    userAnswer: "",
+    answered: false,
+    userAnswer: false,
   },
   {
     id: "21",
@@ -516,8 +516,8 @@ const modal = [
         isCorrect: null,
       },
     ],
-    answered: null,
-    userAnswer: "",
+    answered: false,
+    userAnswer: false,
   },
   {
     id: "22",
@@ -541,8 +541,8 @@ const modal = [
         isCorrect: null,
       },
     ],
-    answered: null,
-    userAnswer: "",
+    answered: false,
+    userAnswer: false,
   },
   {
     id: "23",
@@ -565,8 +565,8 @@ const modal = [
         isCorrect: true,
       },
     ],
-    answered: null,
-    userAnswer: "",
+    answered: false,
+    userAnswer: false,
   },
   {
     id: "24",
@@ -589,8 +589,8 @@ const modal = [
         isCorrect: null,
       },
     ],
-    answered: null,
-    userAnswer: "",
+    answered: false,
+    userAnswer: false,
   },
   {
     id: "25",
@@ -613,8 +613,8 @@ const modal = [
         isCorrect: null,
       },
     ],
-    answered: null,
-    userAnswer: "",
+    answered: false,
+    userAnswer: false,
   },
   {
     id: "26",
@@ -638,8 +638,8 @@ const modal = [
         isCorrect: null,
       },
     ],
-    answered: null,
-    userAnswer: "",
+    answered: false,
+    userAnswer: false,
   },
   {
     id: "27",
@@ -663,8 +663,8 @@ const modal = [
         isCorrect: true,
       },
     ],
-    answered: null,
-    userAnswer: "",
+    answered: false,
+    userAnswer: false,
   },
   {
     id: "28",
@@ -688,11 +688,11 @@ const modal = [
         isCorrect: true,
       },
     ],
-    answered: null,
-    userAnswer: "",
+    answered: false,
+    userAnswer: false,
   },
   {
-    id: "29",
+    id: "29", /////************************************ */
     question: "What is the syntax for a single line comment in Javascript?",
     options: [
       {
@@ -712,8 +712,8 @@ const modal = [
         isCorrect: null,
       },
     ],
-    answered: null,
-    userAnswer: "",
+    answered: false,
+    userAnswer: false,
   },
   {
     id: "30",
@@ -737,7 +737,7 @@ const modal = [
         isCorrect: true,
       },
     ],
-    answered: null,
-    userAnswer: "",
+    answered: false,
+    userAnswer: false,
   },
 ];
