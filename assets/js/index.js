@@ -46,6 +46,8 @@
 
     self.score = ko.observable(0);
     self.rank = ko.observable(null);
+    self.enablePrevious = ko.observable(false);
+    self.continueText = ko.observable('Next&nbsp;&nbsp;<i class="fa fa-angle-right"></i>');
 
     self.toState = function (ctx, event) {
       if (!!event.target.dataset && !!event.target.dataset.value) {
@@ -106,13 +108,13 @@
               self.currentState("trivia");
             } else {
               self.currentState(event.target.dataset.value);
-              console.log(self.chosenItems);
+              // self.chosenItems);
             }
 
             var pos = self.length();
+
             if (pos > 0) {
               self.chosenItems[pos - 1] = self.chosenItem();
-              self.chosenItem(null);
             }
 
             if (event.target.dataset.direction === "backwards" && pos >= 1) {
@@ -121,6 +123,18 @@
             if (event.target.dataset.direction === "forwards") {
               pos = pos + 1;
             }
+            
+            if(pos>1){
+              self.enablePrevious(true);
+              self.continueText('Next&nbsp;&nbsp;<i class="fa fa-angle-right"></i>');
+              if(pos===10){
+                self.continueText('<i class="fa fa-save"></i>&nbsp;&nbsp;Submit');
+              }
+            }
+            else{
+              self.enablePrevious(false);
+            }
+
 
             if (!!pos) {
               self.currentTrivia(self.data()[pos - 1]);
@@ -133,7 +147,6 @@
         } else {
           alert("Please enter your name");
         }
-        console.log(self.chosenItems);
       } else {
         if (event.isTrusted) {
           // case for skip button
@@ -162,8 +175,6 @@
     }
 
     function checkItems(item) {
-      console.log("self.data");
-      //console.log(self.data());
       if (null != item && item.isCorrect) {
         for (var i = 0; i < 10; i++) {
           for (var j = 0; j < 4; j++) {
@@ -224,7 +235,7 @@
   );
 
   // Tooltip
-  var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
-    return new bootstrap.Tooltip(tooltipTriggerEl);
-  });
+  // var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+  //   return new bootstrap.Tooltip(tooltipTriggerEl);
+  // });
 })();
