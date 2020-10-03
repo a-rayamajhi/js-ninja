@@ -57,7 +57,7 @@
             switch (event.target.dataset.value) {
               case "trivia":
                 self.chosenItems.forEach(checkItems);
-                
+
                 self.currentState("result");
                 self.chosenItems[self.length()] = self.chosenItem();
                 self.score(getScorePercentage());
@@ -83,7 +83,7 @@
                 self.currentState("home");
                 self.currentTrivia(self.data()[0]);
                 self.length(0);
-                
+
                 break;
 
               default:
@@ -99,7 +99,6 @@
             self.currentState("home");
             self.currentTrivia(self.data()[0]);
             self.length(0);
-            
           } else {
             self.currentState(event.target.dataset.value);
             var pos = self.length();
@@ -131,12 +130,11 @@
           // case for skip button
           if (self.length() >= COUNT) {
             self.chosenItems.forEach(checkItems);
-            
+
             self.currentState("result");
             self.chosenItems[self.length()] = self.chosenItem();
             self.score(getScorePercentage());
             self.rank(getRank());
-            
           } else {
             var pos = self.length();
             pos = pos + 1;
@@ -160,7 +158,7 @@
       if (null != item && item.isCorrect) {
         for (var i = 0; i < 10; i++) {
           for (var j = 0; j < 4; j++) {
-            if (self.data()[i].options[j].name == item.name) {   
+            if (self.data()[i].options[j].name == item.name) {
               self.data()[i].answered(true);
               break;
             }
@@ -169,25 +167,23 @@
       }
       //////////////////////////////////
       if (null != item) {
-         for (var i = 0; i < 10; i++) {
-           for (var j = 0; j < 4; j++) {
-             if (self.data()[i].options[j].name == item.name) {   
-               self.data()[i].userAnswer(item.name);
-               break;
-              }
-                 
-           }
-         }
+        for (var i = 0; i < 10; i++) {
+          for (var j = 0; j < 4; j++) {
+            if (self.data()[i].options[j].name == item.name) {
+              self.data()[i].userAnswer(item.name);
+              break;
+            }
+          }
         }
+      }
       ////////////////////////////////////
+    }
+    function resetItems() {
+      for (var i = 0; i < 10; i++) {
+        self.data()[i].answered(false);
+      }
+    }
 
-    }
-    function resetItems() {	
-      for (var i = 0; i < 10; i++) {	
-        self.data()[i].answered(false);	
-      }	
-    }
-      
     function getRank() {
       var calculatedScore = calculateScore();
 
@@ -204,7 +200,6 @@
       return calculateScore() * 10;
     }
 
-    
     window.onbeforeunload = function () {
       if (self.currentState() !== "home") {
         return true;
@@ -214,9 +209,13 @@
 
   // knockout Binding
   ko.applyBindings(new AppViewModel());
-})();
 
-var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-toggle="tooltip"]'))
-var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
-  return new bootstrap.Tooltip(tooltipTriggerEl)
-})
+  var tooltipTriggerList = [].slice.call(
+    document.querySelectorAll('[data-toggle="tooltip"]')
+  );
+
+  // Tooltip
+  var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+    return new bootstrap.Tooltip(tooltipTriggerEl);
+  });
+})();

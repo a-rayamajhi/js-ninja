@@ -29,19 +29,19 @@ const modal = [
       "Which Javascript data type is the variable in the example below? Example:\n<pre>var x = 3.14;<pre>",
     options: [
       {
-        name: "Interpreted",
+        name: "Float",
+        isCorrect: null,
+      },
+      {
+        name: "Int",
+        isCorrect: null,
+      },
+      {
+        name: "Number",
         isCorrect: true,
       },
       {
-        name: "Compiled",
-        isCorrect: null,
-      },
-      {
-        name: "Both",
-        isCorrect: null,
-      },
-      {
-        name: "Neither",
+        name: "None of the above",
         isCorrect: null,
       },
     ],
@@ -272,7 +272,7 @@ const modal = [
     userAnswer: false,
   },
   {
-    id: "12", /****************** */
+    id: "12" /****************** */,
     question:
       "In JavaScript, what are those that bend the path back upon itself to repeat portions of code?",
     options: [
