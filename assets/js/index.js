@@ -59,7 +59,7 @@
                 self.chosenItems.forEach(checkItems);
 
                 self.currentState("result");
-                self.chosenItems[self.length()] = self.chosenItem();
+                self.chosenItems[self.length() - 1] = self.chosenItem();
                 self.score(getScorePercentage());
                 self.rank(getRank());
 
@@ -132,7 +132,7 @@
             self.chosenItems.forEach(checkItems);
 
             self.currentState("result");
-            self.chosenItems[self.length()] = self.chosenItem();
+            self.chosenItems[self.length() - 1] = self.chosenItem();
             self.score(getScorePercentage());
             self.rank(getRank());
           } else {
