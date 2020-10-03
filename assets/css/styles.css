@@ -89,8 +89,9 @@ body {
 .state-trivia {
   height: inherit;
 }
-
+/* added padding-top to resolve text placement issue caused by addition of belts display: Jonathan Roland */
 .trivia-main {
+  padding-top: 100px;
   height: 95%;
   display: flex;
   justify-content: center;
@@ -188,8 +189,10 @@ body {
   float: right;
   border-radius: 50px;
 }
+/* added margin-left for Submit button icon spacing consistency: Jonathan Roland */
 svg {
   margin-right: 10px;
+  margin-left: 10px; 
 }
 .fa-check {
   color: #155724;
@@ -245,7 +248,7 @@ Score position
 
 .rank1 {
   color: #212121;
-  background-color: #ebcc2a;
+  background-color: lightgrey;
   font-size: 3rem;
   width: 700px;
   height: 90px;
@@ -361,4 +364,28 @@ Score position
   left: 87%;
   border-right: 20px solid #bc1f1f;
   transform: translate(-50%);
+}
+
+/* Added by Jonathan Roland */
+
+.display-belt{
+  height: 5px !important;
+  width: 200px !important;
+  font-size: 1rem !important;
+  -ms-transform: rotate(-45deg); /* IE 9 */
+  -webkit-transform: rotate(-45deg); /* Chrome, Safari, Opera */
+  transform: rotate(-45deg);
+}
+
+.display-belt-container{
+  padding-top: 100px;
+  margin-bottom: 100px;
+}
+
+.home-container{
+  margin-top: 200px !important;
+}
+
+.quiz-nav-btn{
+  margin-top: 100px
 }
