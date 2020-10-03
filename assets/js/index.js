@@ -100,7 +100,15 @@
             self.currentTrivia(self.data()[0]);
             self.length(0);
           } else {
-            self.currentState(event.target.dataset.value);
+            // TODO: work on triva-skip
+            // all the questions except the last one.
+            if (event.target.dataset.value == "trivia-skip") {
+              self.currentState("trivia");
+            } else {
+              self.currentState(event.target.dataset.value);
+              console.log(self.chosenItems);
+            }
+
             var pos = self.length();
             if (pos > 0) {
               self.chosenItems[pos - 1] = self.chosenItem();
@@ -113,6 +121,7 @@
             if (event.target.dataset.direction === "forwards") {
               pos = pos + 1;
             }
+
             if (!!pos) {
               self.currentTrivia(self.data()[pos - 1]);
               self.length(pos);
