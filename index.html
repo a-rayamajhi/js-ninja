@@ -232,21 +232,8 @@
             <div class="bubble-small"></div>
           </div>
           <div>
-            <a
-              href="javascript:void(0);"
-              data-bind="click: toState"
-              data-value="trivia-skip"
-              type="button"
-              class="btn btn-skip"
-              data-toggle="tooltip"
-              data-placement="bottom"
-              title="Skip Question"
-              ><i class="fas fa-chevron-right"></i
-            ></a>
+            Candidate:&nbsp;<strong data-bind="text: jsNinja"></strong>
           </div>
-        </div>
-        <div class="justify-content-flex-start">
-          Candidate:&nbsp;<strong data-bind="text: jsNinja"></strong>
         </div>
 
         <div class="trivia-main">
@@ -271,7 +258,7 @@
             </div>
             <div class="btn-group">
               <button
-                data-bind="click: toState"
+                data-bind="click: toState, enable: enablePrevious"
                 data-value="trivia"
                 data-direction="backwards"
                 type="button"
@@ -285,7 +272,7 @@
               </button>
 
               <button
-                data-bind="click: toState"
+                data-bind="click: toState, html: continueText"
                 data-value="trivia"
                 data-direction="forwards"
                 type="button"
@@ -294,8 +281,6 @@
                 data-placement="bottom"
                 title="Submit final answer"
               >
-                <i class="fas fa-save"></i>
-                Submit
               </button>
             </div>
           </div>
@@ -454,8 +439,8 @@
         </div>
       </div>
     </div>
-
-    <script src="assets/js/modal.js"></script>
-    <script src="assets/js/index.js"></script>
+  </div>
+  <script src="assets/js/modal.js"></script>
+  <script src="assets/js/index.js"></script>
   </body>
 </html>

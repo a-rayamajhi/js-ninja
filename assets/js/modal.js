@@ -53,8 +53,8 @@ const modal = [
     question: "Which symbol does Javascript use to concatenate strings?",
     options: [
       {
-        name: "-",
-        isCorrect: true,
+        name: ".",
+        isCorrect: null,
       },
       {
         name: "*",
@@ -62,7 +62,7 @@ const modal = [
       },
       {
         name: "+",
-        isCorrect: null,
+        isCorrect: true,
       },
       {
         name: "&",
@@ -98,7 +98,7 @@ const modal = [
     userAnswer: false,
   },
   {
-    id: "5", //////****************************************** */
+    id: "5",
     question:
       "Statements that make the JavaScript interpreter execute or skip other statements depending on the value of an expression.",
     options: [
@@ -199,22 +199,22 @@ const modal = [
   {
     id: "9",
     question:
-      "What is a technique for initializing the elements of an array from or based on the elements of another array or iterable object?",
+      "What is JSON?",
     options: [
       {
-        name: "Array dissemination",
+        name: "A Javascript library",
         isCorrect: null,
       },
       {
-        name: "Array description",
-        isCorrect: null,
-      },
-      {
-        name: "Array comprehension",
+        name: "A standardized data storage format in Javascript",
         isCorrect: true,
       },
       {
-        name: "Array initialization",
+        name: "The way asynchronous calls are made in Javascript",
+        isCorrect: null,
+      },
+      {
+        name: "None of the Above",
         isCorrect: null,
       },
     ],
@@ -247,7 +247,7 @@ const modal = [
     userAnswer: false,
   },
   {
-    id: "11", ///*************************** */
+    id: "11",
     question:
       "JavaScript functions can be invoked in four ways, which of the following is not the right way to invoke a function?",
     options: [
@@ -272,7 +272,7 @@ const modal = [
     userAnswer: false,
   },
   {
-    id: "12" /****************** */,
+    id: "12",
     question:
       "In JavaScript, what are those that bend the path back upon itself to repeat portions of code?",
     options: [
@@ -347,7 +347,7 @@ const modal = [
     userAnswer: false,
   },
   {
-    id: "15", //////////////************
+    id: "15",
     question:
       "Which one in the following is the right way to create an object in JavaScript?",
     options: [
@@ -692,7 +692,7 @@ const modal = [
     userAnswer: false,
   },
   {
-    id: "29", /////************************************ */
+    id: "29",
     question: "What is the syntax for a single line comment in Javascript?",
     options: [
       {
