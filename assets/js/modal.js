@@ -20,7 +20,8 @@ const modal = [
         isCorrect: null,
       },
     ],
-    answered: null,
+    answered: false,
+    userAnswer: false,
   },
   {
     id: "2",
@@ -28,31 +29,32 @@ const modal = [
       "Which Javascript data type is the variable in the example below? Example:\n<pre>var x = 3.14;<pre>",
     options: [
       {
-        name: "Interpreted",
+        name: "Float",
+        isCorrect: null,
+      },
+      {
+        name: "Int",
+        isCorrect: null,
+      },
+      {
+        name: "Number",
         isCorrect: true,
       },
       {
-        name: "Compiled",
-        isCorrect: null,
-      },
-      {
-        name: "Both",
-        isCorrect: null,
-      },
-      {
-        name: "Neither",
+        name: "None of the above",
         isCorrect: null,
       },
     ],
-    answered: null,
+    answered: false,
+    userAnswer: false,
   },
   {
     id: "3",
     question: "Which symbol does Javascript use to concatenate strings?",
     options: [
       {
-        name: "-",
-        isCorrect: true,
+        name: ".",
+        isCorrect: null,
       },
       {
         name: "*",
@@ -60,14 +62,15 @@ const modal = [
       },
       {
         name: "+",
-        isCorrect: null,
+        isCorrect: true,
       },
       {
         name: "&",
         isCorrect: null,
       },
     ],
-    answered: null,
+    answered: false,
+    userAnswer: false,
   },
   {
     id: "4",
@@ -91,7 +94,8 @@ const modal = [
         isCorrect: null,
       },
     ],
-    answered: null,
+    answered: false,
+    userAnswer: false,
   },
   {
     id: "5",
@@ -115,7 +119,8 @@ const modal = [
         isCorrect: null,
       },
     ],
-    answered: null,
+    answered: false,
+    userAnswer: false,
   },
   {
     id: "6",
@@ -139,7 +144,8 @@ const modal = [
         isCorrect: true,
       },
     ],
-    answered: null,
+    answered: false,
+    userAnswer: false,
   },
   {
     id: "7",
@@ -162,7 +168,8 @@ const modal = [
         isCorrect: true,
       },
     ],
-    answered: null,
+    answered: false,
+    userAnswer: false,
   },
   {
     id: "8",
@@ -186,31 +193,33 @@ const modal = [
         isCorrect: null,
       },
     ],
-    answered: null,
+    answered: false,
+    userAnswer: false,
   },
   {
     id: "9",
     question:
-      "What is a technique for initializing the elements of an array from or based on the elements of another array or iterable object?",
+      "What is JSON?",
     options: [
       {
-        name: "Array dissemination",
+        name: "A Javascript library",
         isCorrect: null,
       },
       {
-        name: "Array description",
-        isCorrect: null,
-      },
-      {
-        name: "Array comprehension",
+        name: "A standardized data storage format in Javascript",
         isCorrect: true,
       },
       {
-        name: "Array initialization",
+        name: "The way asynchronous calls are made in Javascript",
+        isCorrect: null,
+      },
+      {
+        name: "None of the Above",
         isCorrect: null,
       },
     ],
-    answered: null,
+    answered: false,
+    userAnswer: false,
   },
   {
     id: "10",
@@ -234,7 +243,8 @@ const modal = [
         isCorrect: null,
       },
     ],
-    answered: null,
+    answered: false,
+    userAnswer: false,
   },
   {
     id: "11",
@@ -258,7 +268,8 @@ const modal = [
         isCorrect: null,
       },
     ],
-    answered: null,
+    answered: false,
+    userAnswer: false,
   },
   {
     id: "12",
@@ -282,7 +293,8 @@ const modal = [
         isCorrect: null,
       },
     ],
-    answered: null,
+    answered: false,
+    userAnswer: false,
   },
   {
     id: "13",
@@ -306,7 +318,8 @@ const modal = [
         isCorrect: true,
       },
     ],
-    answered: null,
+    answered: false,
+    userAnswer: false,
   },
   {
     id: "14",
@@ -330,7 +343,8 @@ const modal = [
         isCorrect: null,
       },
     ],
-    answered: null,
+    answered: false,
+    userAnswer: false,
   },
   {
     id: "15",
@@ -355,7 +369,8 @@ const modal = [
         isCorrect: null,
       },
     ],
-    answered: null,
+    answered: false,
+    userAnswer: false,
   },
   {
     id: "16",
@@ -378,7 +393,8 @@ const modal = [
         isCorrect: null,
       },
     ],
-    answered: null,
+    answered: false,
+    userAnswer: false,
   },
   {
     id: "17",
@@ -402,7 +418,8 @@ const modal = [
         isCorrect: null,
       },
     ],
-    answered: null,
+    answered: false,
+    userAnswer: false,
   },
   {
     id: "18",
@@ -426,7 +443,8 @@ const modal = [
         isCorrect: null,
       },
     ],
-    answered: null,
+    answered: false,
+    userAnswer: false,
   },
   {
     id: "19",
@@ -450,7 +468,8 @@ const modal = [
         isCorrect: true,
       },
     ],
-    answered: null,
+    answered: false,
+    userAnswer: false,
   },
   {
     id: "20",
@@ -473,7 +492,8 @@ const modal = [
         isCorrect: null,
       },
     ],
-    answered: null,
+    answered: false,
+    userAnswer: false,
   },
   {
     id: "21",
@@ -496,7 +516,8 @@ const modal = [
         isCorrect: null,
       },
     ],
-    answered: null,
+    answered: false,
+    userAnswer: false,
   },
   {
     id: "22",
@@ -520,7 +541,8 @@ const modal = [
         isCorrect: null,
       },
     ],
-    answered: null,
+    answered: false,
+    userAnswer: false,
   },
   {
     id: "23",
@@ -543,7 +565,8 @@ const modal = [
         isCorrect: true,
       },
     ],
-    answered: null,
+    answered: false,
+    userAnswer: false,
   },
   {
     id: "24",
@@ -566,7 +589,8 @@ const modal = [
         isCorrect: null,
       },
     ],
-    answered: null,
+    answered: false,
+    userAnswer: false,
   },
   {
     id: "25",
@@ -589,7 +613,8 @@ const modal = [
         isCorrect: null,
       },
     ],
-    answered: null,
+    answered: false,
+    userAnswer: false,
   },
   {
     id: "26",
@@ -613,7 +638,8 @@ const modal = [
         isCorrect: null,
       },
     ],
-    answered: null,
+    answered: false,
+    userAnswer: false,
   },
   {
     id: "27",
@@ -637,7 +663,8 @@ const modal = [
         isCorrect: true,
       },
     ],
-    answered: null,
+    answered: false,
+    userAnswer: false,
   },
   {
     id: "28",
@@ -661,7 +688,8 @@ const modal = [
         isCorrect: true,
       },
     ],
-    answered: null,
+    answered: false,
+    userAnswer: false,
   },
   {
     id: "29",
@@ -673,18 +701,19 @@ const modal = [
       },
       {
         name: "// comment",
-        isCorrect: null,
+        isCorrect: true,
       },
       {
         name: "-- comment",
-        isCorrect: true,
+        isCorrect: null,
       },
       {
         name: "/* comment */",
         isCorrect: null,
       },
     ],
-    answered: null,
+    answered: false,
+    userAnswer: false,
   },
   {
     id: "30",
@@ -708,6 +737,7 @@ const modal = [
         isCorrect: true,
       },
     ],
-    answered: null,
+    answered: false,
+    userAnswer: false,
   },
 ];
