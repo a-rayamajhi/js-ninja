@@ -65,6 +65,7 @@
                 self.score(getScorePercentage());
                 self.rank(getRank());
                 checkItems();
+
                 break;
 
               case "try-again":
@@ -226,13 +227,4 @@
 
   // knockout Binding
   ko.applyBindings(new AppViewModel());
-
-  var tooltipTriggerList = [].slice.call(
-    document.querySelectorAll('[data-toggle="tooltip"]')
-  );
-
-  // Tooltip
-  var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
-    return new bootstrap.Tooltip(tooltipTriggerEl);
-   });
 })();
