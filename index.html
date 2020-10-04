@@ -1,16 +1,13 @@
-<!--
-
-/*
-============================================
-; Title:  JS NINJA
-; Date:   September 2020 (Fall Semester 2020)
-; Team Captain: Anil Rajamajhi
-; Contributors: Marie Nicole Barleta, Jonathan Roland and Wendy Leon
-; Description: JavaScript Trivia - Single Page Application using Knockout.js
-;===========================================
-*/
-
-
+<!--	
+/*	
+============================================	
+; Title:  JS NINJA	
+; Date:   September 2020 (Fall Semester 2020)	
+; Team Captain: Anil Rajamajhi	
+; Contributors: Marie Nicole Barleta, Jonathan Roland and Wendy Leon	
+; Description: JavaScript Trivia - Single Page Application using Knockout.js	
+;===========================================	
+*/	
 -->
 
 
@@ -34,7 +31,6 @@
     <script src="vendor/js/v5.bootstrap.min.js"></script>
     <script src="vendor/js/knockout.min.js"></script>
 
-    
     <!------------->
 
     <link rel="stylesheet" href="assets/css/styles.css" />
@@ -66,20 +62,147 @@
       <div class="container-fluid">
         <div class="state-home" data-bind="visible: currentState() == 'home'">
           <div class="container">
-            <div class="label">Please Enter Your Name</div>
+         
             <div>
-              <input class="jsn-input-control" data-bind="value: jsNinja" />
+              <input class="jsn-input-control" data-bind="value: jsNinja" placeholder="Please Enter Your Name"/>
             </div>
 
-            <div>
-              <button data-bind="click: toState"
+            <div class="d-flex justify-content-center">
+              <button
+                data-bind="click: toState"
                 data-value="trivia"
                 data-direction="forwards"
-                type="button" 
+                type="button"
                 class="btn btn-danger btn-danger-overwrite"
-                >
+                data-toggle="tooltip"
+                data-placement="bottom"
+                title="Press to start"
+              >
                 Start Trivia
               </button>
+            </div>
+            <br />
+            <div class="d-flex justify-content-center">
+              <button
+                class="btn btn-info"
+                data-toggle="modal"
+                data-target="#infoModal"
+              >
+                <i class="fas fa-user-ninja"></i>&nbsp;&nbsp;Ranks and Belts
+                Info
+              </button>
+            </div>
+
+            <!-- Information Modal -->
+            <div class="modal fade" tabindex="-1" id="infoModal">
+              <div class="modal-dialog modal-dialog-scrollable modal-lg">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title">Ranks and Belts</h5>
+                    <button
+                      type="button"
+                      class="close"
+                      data-dismiss="modal"
+                      aria-label="Close"
+                    >
+                      <span aria-hidden="true"
+                        ><i class="fas fa-times"></i
+                      ></span>
+                    </button>
+                  </div>
+                  <div class="modal-body">
+                    <div class="container">
+                      <p>
+                        The quiz consists of 10 multiple choice, randomized
+                        javascript questions. For each correct answer, you will
+                        advance one JS Ninja belt. Your test will be graded and
+                        results displayed at the end of the quiz. You will then
+                        be able to re-try the same questions or start over
+                        entirely.
+                      </p>
+                      <h3>Beginner</h3>
+                      <div class="row">
+                        <div class="col-sm-12 rank0">
+                          <div class="display-6">0: White Belt</div>
+                        </div>
+                      </div>
+                      <br />
+                      <div class="row">
+                        <div class="col-sm-12 rank1">
+                          <div class="display-6">1: Gray Belt</div>
+                        </div>
+                      </div>
+                      <br />
+                      <div class="row">
+                        <div class="col-sm-12 rank2">
+                          <div class="display-6">2: Yellow Belt</div>
+                        </div>
+                      </div>
+                      <br />
+                      <div class="row">
+                        <div class="col-sm-12 rank3">
+                          <div class="display-6">3: Orange Belt</div>
+                        </div>
+                      </div>
+                      <br />
+                      <div class="row">
+                        <div class="col-sm-12 rank4">
+                          <div class="display-6">4: Green Belt</div>
+                        </div>
+                      </div>
+                      <br />
+                      <div class="row">
+                        <div class="col-sm-12 rank5">
+                          <div class="display-6">5: Blue Belt</div>
+                        </div>
+                      </div>
+                      <br />
+                      <h3>Novice</h3>
+                      <div class="row">
+                        <div class="col-sm-12 rank6">
+                          <div class="display-6">6: Purple Belt</div>
+                        </div>
+                      </div>
+                      <br />
+                      <div class="row">
+                        <div class="col-sm-12 rank7">
+                          <div class="display-6">7: Red Belt</div>
+                        </div>
+                      </div>
+                      <br />
+                      <h3>Expert</h3>
+                      <div class="row">
+                        <div class="col-sm-12 rank8">
+                          <div class="display-6">8: Brown Belt</div>
+                        </div>
+                      </div>
+                      <br />
+                      <div class="row">
+                        <div class="col-sm-12 rank9">
+                          <div class="display-6">9: Black Belt</div>
+                        </div>
+                      </div>
+                      <br />
+                      <div class="row">
+                        <div class="col-sm-12 rank10">
+                          <div class="display-6">10: Black + Stripe</div>
+                        </div>
+                      </div>
+                      <br />
+                    </div>
+                  </div>
+
+                  <div class="modal-footer">
+                    <button
+                      type="button"
+                      class="btn btn-secondary"
+                      data-dismiss="modal"
+                    >
+                      Close
+                    </button>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -94,25 +217,29 @@
               data-bind="click: toState"
               data-value="reset"
               type="button"
-              class="btn btn-danger"
+              class="btn btn-outline-danger"
+              data-toggle="tooltip"
+              data-placement="bottom"
+              title="Go back to main menu"
             >
-            <i class="fas fa-minus-circle"></i>
+              <i class="fas fa-minus-circle"></i>
               Reset
             </button>
-            <div
-              data-bind="text: length() ? length() : ''"
-              class="trivia-count"
-            ></div>
+            <div class="bubble-container align-items-center">
+              <div class="bubble-small"></div>
+              <div class="bubble-mid"></div>
+              <div
+                data-bind="text: length() ? length() : ''"
+                class="trivia-count"
+              ></div>
+              <div class="bubble-mid"></div>
+              <div class="bubble-small"></div>
+            </div>
             <div>
-              <a href="javascript:void(0);" data-bind="click: toState" type="button" class="btn btn-skip"><i class="fas fa-chevron-right"></i></a>
+              Candidate:&nbsp;<strong data-bind="text: jsNinja"></strong>
             </div>
           </div>
-          <div class="name justify-content-flex-end">
-            Candidate:&nbsp;<strong data-bind="text: jsNinja"></strong>
-          </div>
 
-          
-          
           <div class="trivia-main">
             <div class="container">
               <h5
@@ -133,29 +260,33 @@
                   <span data-bind="text: $data.name"></span>
                 </div>
               </div>
-            </div>
-          </div>
-          <div class="footer align-items">
-            <button
-              data-bind="click: toState"
-              data-value="trivia"
-              data-direction="backwards"
-              type="button"
-              class="btn btn-outline-primary"
-            >
-              <i class="fas fa-angle-left"></i>
-              Previous
-            </button>
+              <div class="btn-group">
+                <button
+                  data-bind="click: toState, enable: enablePrevious"
+                  data-value="trivia"
+                  data-direction="backwards"
+                  type="button"
+                  class="btn btn-outline-primary"
+                  data-toggle="tooltip"
+                  data-placement="bottom"
+                  title="Back to previous question"
+                >
+                  <i class="fas fa-angle-left"></i>
+                  Previous
+                </button>
 
-            <button
-              data-bind="click: toState"
-              data-value="trivia"
-              data-direction="forwards"
-              type="button"
-              class="btn btn-outline-success"
-            >
-              Submit
-            </button>
+                <button
+                  data-bind="click: toState, html: continueText"
+                  data-value="trivia"
+                  data-direction="forwards"
+                  type="button"
+                  class="btn btn-outline-success"
+                  data-toggle="tooltip"
+                  data-placement="bottom"
+                  title="Submit final answer"
+                ></button>
+              </div>
+            </div>
           </div>
         </div>
 
@@ -165,32 +296,38 @@
           data-bind="visible: currentState() == 'result'"
         >
           <div class="header align-items">
-           
-             <button
+            <button
               data-bind="click: toState"
               data-value="reset"
               type="button"
-              class="btn btn-danger"
+              class="btn btn-outline-danger"
+              data-toggle="tooltip"
+              data-placement="bottom"
+              title="Go back to main menu"
             >
-            <i class="fas fa-minus-circle"></i>
+              <i class="fas fa-minus-circle"></i>
               Reset
             </button>
             <div class="name justify-content-flex-end">
               Candidate:&nbsp;<strong data-bind="text: jsNinja"></strong>
             </div>
           </div>
-        
+
           <div class="main">
-        
-            <div class="text-center container"><br /><br /><h1>Rank</h1>
-          
+            <div class="text-center container">
+              <br /><br />
+             
               <div class="percentage">
                 Score: <span data-bind="text: score"></span>%
               </div>
 
-              <div data-bind="css: { rank0: score() === 0, rank1: score() === 10, rank2: score() === 20, rank3: score() === 30, rank4: score() === 40, rank5: score() === 50, rank6: score() === 60, rank7: score() === 70, rank8: score() === 80, rank9: score() === 90,rank10: score() === 100   }">
-                <div data-bind="text: rank"></div>
-             </div>
+              <div class="rank-belt">
+                <div
+                  data-bind="css: { rank0: score() === 0, rank1: score() === 10, rank2: score() === 20, rank3: score() === 30, rank4: score() === 40, rank5: score() === 50, rank6: score() === 60, rank7: score() === 70, rank8: score() === 80, rank9: score() === 90,rank10: score() === 100   }"
+                >
+                  <div class="display-6" data-bind="text: rank"></div>
+                </div>
+              </div>
             </div>
           </div>
           <div class="footer align-items">
@@ -199,6 +336,9 @@
               data-value="try-again"
               type="button"
               class="btn btn-outline-primary"
+              data-toggle="tooltip"
+              data-placement="bottom"
+              title="Back to first question"
             >
               Try Again
             </button>
@@ -207,6 +347,9 @@
               data-value="review"
               type="button"
               class="btn btn-outline-success"
+              data-toggle="tooltip"
+              data-placement="bottom"
+              title="View Answers"
             >
               See Correct Answers
             </button>
@@ -218,72 +361,94 @@
           class="state-result"
           data-bind="visible: currentState() == 'review'"
         >
-        <div class="header align-items">
-          <button
-            data-bind="click: toState"
-            data-value="reset"
-            type="button"
-            class="btn btn-danger"
-          >
-          <i class="fas fa-minus-circle"></i>
-            Reset
-          </button>
-          <div class="name justify-content-flex-end">
-            Candidate:&nbsp;<strong data-bind="text: jsNinja"></strong>
+          <div class="header align-items">
+            <button
+              data-bind="click: toState"
+              data-value="result"
+              type="button"
+              class="btn btn-light"
+              data-toggle="tooltip"
+              data-placement="bottom"
+              title="Back to result page"
+            >
+              <i class="fas fa-chevron-left"></i>
+              Back
+            </button>
+            <div class="justify-content-flex-start">
+              Candidate:&nbsp;<strong data-bind="text: jsNinja"></strong>
+            </div>
           </div>
-        </div>
 
           <div class="correct-answers">
             <div data-bind="foreach: data">
               <div class="data-tile">
-              <!-- ko if: $data.answered -->
-                <div class="alert alert-success ">Correct</div>
-              <!-- /ko -->
-              <!-- ko ifnot: $data.answered -->
-                <div class="alert alert-danger">Incorrect</div>
-              <!-- /ko -->
-
-              <div data-bind="visible: $data.answered"></div>
-              
-              <h5 data-bind="text: question"></h5>
-              <div data-bind="foreach: options">
-                <div>
-                  <!-- ko if: isCorrect -->
-                  <!--<i class="far fa-dot-circle"></i>-->
-                  <i class="fa fa-check" aria-hidden="true"></i>
+                <div class="alert-wrapper">
+                  <!-- ko if: $data.answered -->
+                  <div class="alert alert-success">Correct</div>
                   <!-- /ko -->
-                  <!-- ko ifnot: isCorrect -->
-                    <!--<i class="far fa-circle"></i>--> 
-                    <i class="far fa-times-circle"></i>
+                  <!-- ko ifnot: $data.answered -->
+                  <div class="alert alert-danger">Incorrect</div>
                   <!-- /ko -->
-                  &nbsp;&nbsp;<span data-bind="text: name"></span>
                 </div>
-              </div> 
+
+                <div data-bind="visible: $data.answered"></div>
+
+                <h5 data-bind="text: question"></h5>
+                <div data-bind="foreach: options">
+                  <div>
+                    <!-- ko if: isCorrect -->
+
+                    <i class="fa fa-check" aria-hidden="true"></i>
+                    <!-- /ko -->
+                    <!-- ko ifnot: isCorrect -->
+
+                    <i class="far fa-times-circle"></i>
+                    <!-- /ko -->
+                    <span data-bind="text: name"></span>
+                  </div>
+                </div>
+                <div>
+                  <span class="your-answer">Your answer: </span>
+                  <!-- ko if: userAnswer -->
+                  <i class="far fa-dot-circle"></i>&nbsp;<span
+                    data-bind="text: userAnswer"
+                  ></span>
+                  <!-- /ko -->
+                  <!-- ko ifnot: userAnswer -->
+                  You skipped this answer.
+                  <!-- /ko -->
+                </div>
+              </div>
             </div>
           </div>
-        </div>
-        <div class="footer align-items">
-          <button
-            data-bind="click: toState"
-            data-value="try-again"
-            type="button"
-            class="btn btn-outline-primary"
-          >
-            Try Again
-          </button>
-          <button
-            data-bind="click: toState"
-            data-value="reset"
-            type="button"
-            class="btn btn-danger"
-          >
-          <i class="fas fa-minus-circle"></i>
-            Reset
-          </button>
+          <div class="footer align-items">
+            <button
+              data-bind="click: toState"
+              data-value="try-again"
+              type="button"
+              class="btn btn-outline-primary"
+              data-toggle="tooltip"
+              data-placement="bottom"
+              title="Back to first question"
+            >
+              Try Again
+            </button>
+            <button
+              data-bind="click: toState"
+              data-value="reset"
+              type="button"
+              class="btn btn-outline-danger"
+              data-toggle="tooltip"
+              data-placement="bottom"
+              title="Back to main menu"
+            >
+              <i class="fas fa-minus-circle"></i>
+              Reset
+            </button>
+          </div>
         </div>
       </div>
     </div>
-
     <script src="assets/js/modal.js"></script>
     <script src="assets/js/index.js"></script>
   </body>

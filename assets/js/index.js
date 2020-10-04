@@ -13,7 +13,8 @@
      */
     for (var i = 0; i < 10; i++) {
       randomNum = positions[Math.floor(Math.random() * positions.length)];
-      modal[randomNum].answered = ko.observable(modal[randomNum].answered);
+      modal[randomNum].answered = ko.observable(false);
+      modal[randomNum].userAnswer = ko.observable(false);
       questions.push(modal[randomNum]);
       index = positions.indexOf(randomNum);
       positions.splice(index, 1);
@@ -45,6 +46,10 @@
 
     self.score = ko.observable(0);
     self.rank = ko.observable(null);
+    self.enablePrevious = ko.observable(false);
+    self.continueText = ko.observable(
+      'Next&nbsp;&nbsp;<i class="fa fa-angle-right"></i>'
+    );
 
     self.toState = function (ctx, event) {
       if (!!event.target.dataset && !!event.target.dataset.value) {
@@ -55,31 +60,38 @@
           ) {
             switch (event.target.dataset.value) {
               case "trivia":
-                self.chosenItems.forEach(checkItems);
-                self.data.valueHasMutated();
                 self.currentState("result");
-                self.chosenItems[self.length()] = self.chosenItem();
+                self.chosenItems[self.length() - 1] = self.chosenItem();
                 self.score(getScorePercentage());
                 self.rank(getRank());
-
+                checkItems();
                 break;
 
               case "try-again":
+                self.chosenItems.forEach(resetItems);
                 self.chosenItem(null);
                 self.chosenItems = [];
                 self.currentState("trivia");
                 self.currentTrivia(self.data()[0]);
                 self.length(1);
+                self.continueText(
+                  'Next&nbsp;&nbsp;<i class="fa fa-angle-right"></i>'
+                );
                 break;
 
               case "reset":
                 self.jsNinja("");
                 self.chosenItem(null);
                 self.chosenItems = [];
+                resetItems();
+                self.data(randomizeTenQuestions(modal));
                 self.currentState("home");
                 self.currentTrivia(self.data()[0]);
                 self.length(0);
-                self.data(randomizeTenQuestions(modal));
+                self.continueText(
+                  'Next&nbsp;&nbsp;<i class="fa fa-angle-right"></i>'
+                );
+
                 break;
 
               default:
@@ -90,16 +102,21 @@
             self.jsNinja("");
             self.chosenItem(null);
             self.chosenItems = [];
+            resetItems();
+            self.data(randomizeTenQuestions(modal));
             self.currentState("home");
             self.currentTrivia(self.data()[0]);
             self.length(0);
-            self.data(randomizeTenQuestions(modal));
           } else {
             self.currentState(event.target.dataset.value);
+
             var pos = self.length();
+
             if (pos > 0) {
+              if (event.target.dataset.goal === "skip") {
+                self.chosenItems[pos - 1] = undefined;
+              }
               self.chosenItems[pos - 1] = self.chosenItem();
-              self.chosenItem(null);
             }
 
             if (event.target.dataset.direction === "backwards" && pos >= 1) {
@@ -108,8 +125,24 @@
             if (event.target.dataset.direction === "forwards") {
               pos = pos + 1;
             }
+
+            if (pos > 1) {
+              self.enablePrevious(true);
+              self.continueText(
+                'Next&nbsp;&nbsp;<i class="fa fa-angle-right"></i>'
+              );
+              if (pos === 10) {
+                self.continueText(
+                  '<i class="fa fa-save"></i>&nbsp;&nbsp;Submit'
+                );
+              }
+            } else {
+              self.enablePrevious(false);
+            }
+
             if (!!pos) {
               self.currentTrivia(self.data()[pos - 1]);
+              self.chosenItem(self.chosenItems[pos - 1]);
               self.length(pos);
             } else {
               self.currentTrivia(self.data()[0]);
@@ -119,15 +152,14 @@
         } else {
           alert("Please enter your name");
         }
-        console.log(self.chosenItems);
       } else {
         if (event.isTrusted) {
           // case for skip button
           if (self.length() >= COUNT) {
             self.chosenItems.forEach(checkItems);
-            self.data.valueHasMutated();
+
             self.currentState("result");
-            self.chosenItems[self.length()] = self.chosenItem();
+            self.chosenItems[self.length() - 1] = self.chosenItem();
             self.score(getScorePercentage());
             self.rank(getRank());
           } else {
@@ -147,20 +179,28 @@
         .length;
     }
 
-    function checkItems(item) {
-      console.log("self.data");
-      console.log(self.data());
-      if (null != item && item.isCorrect) {
-        for (var i = 0; i < 10; i++) {
+    function checkItems() {
+      self.chosenItems.forEach(function (item, i) {
+        if (!!item) {
           for (var j = 0; j < 4; j++) {
             if (self.data()[i].options[j].name == item.name) {
-              self.data()[i].answered(true);
-              break;
+              self.data()[i].userAnswer(item.name);
+              if (item.isCorrect) {
+                self.data()[i].answered(true);
+              }
             }
           }
         }
+      });
+
+      ////////////////////////////////////
+    }
+    function resetItems() {
+      for (var i = 0; i < 10; i++) {
+        self.data()[i].answered(false);
       }
     }
+
     function getRank() {
       var calculatedScore = calculateScore();
 
@@ -177,7 +217,6 @@
       return calculateScore() * 10;
     }
 
-    
     window.onbeforeunload = function () {
       if (self.currentState() !== "home") {
         return true;
@@ -187,4 +226,13 @@
 
   // knockout Binding
   ko.applyBindings(new AppViewModel());
+
+  var tooltipTriggerList = [].slice.call(
+    document.querySelectorAll('[data-toggle="tooltip"]')
+  );
+
+  // Tooltip
+  var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+    return new bootstrap.Tooltip(tooltipTriggerEl);
+   });
 })();
