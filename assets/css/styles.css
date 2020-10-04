@@ -1,3 +1,38 @@
+/* 
+*  CSS TABLE OF CONTENTS
+*   
+*  1.0 - HTML, Body
+*  2.0 - Single page main container 
+*  3.0 - Landing page
+*  4.0 - Trivia page
+*  5.0 - Result page
+*  6.0 - Belts rank
+*  7.0 - Answers page
+*
+*/
+
+
+
+
+
+
+
+/*** 4.0 -  ***/
+
+/*** 5.0 -  ***/
+
+/*** 6.0 -  ***/
+
+
+/*** 5.1 -  ***/
+
+/*** 5.2 -  ***/
+
+/*** 7.0 -  ***/
+
+
+
+/*** 1.0 - HTML, Body ***/
 html,
 body {
   font-family: "Roboto Condensed", sans-serif;
@@ -5,15 +40,50 @@ body {
   scroll-behavior: smooth;
 }
 
+
 body {
   height: 100vh;
 }
 
+
+
+/*** 2.0 -  Single page main container ***/
 .wrapper {
   height: 100%;
-  background-color: #eff1f6;
+  background-color: #EFF1F6;
   padding: 1rem 1rem 0 1rem;
 }
+
+
+/*** 3.0 - Landing page ***/
+
+.state-home {
+  height: inherit;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.state-home > .container {
+  max-width: 700px;
+}
+
+
+.jsn-input-control {
+  border: none;
+  border-radius: 0;
+  background-color: #f0f3f7;
+  padding-left: 17px;
+  width: 100%;
+  height: 61px;
+}
+
+.jsn-input-control:active,
+.jsn-input-control:focus {
+  border-left: solid 5px #5172aa;
+  padding-left: 12px;
+  outline: none;
+}
+
 
 .btn-outline-primary {
   color: #5172aa;
@@ -77,22 +147,6 @@ body {
   border-radius: 2rem 2rem 0 0;
 }
 
-.jsn-input-control {
-  border: none;
-  border-radius: 0;
-  background-color: #f0f3f7;
-  padding-left: 17px;
-  width: 100%;
-  height: 61px;
-}
-
-.jsn-input-control:active,
-.jsn-input-control:focus {
-  border-left: solid 5px #5172aa;
-  padding-left: 12px;
-  outline: none;
-}
-
 .state-result,
 .state-trivia {
   height: inherit;
@@ -138,15 +192,6 @@ body {
   margin: 0 1rem;
 }
 
-.state-home {
-  height: inherit;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.state-home > .container {
-  max-width: 700px;
-}
 
 .btn-danger-overwrite {
   margin-top: 4rem;
