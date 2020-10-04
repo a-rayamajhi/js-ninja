@@ -13,8 +13,8 @@
      */
     for (var i = 0; i < 10; i++) {
       randomNum = positions[Math.floor(Math.random() * positions.length)];
-      modal[randomNum].answered = ko.observable();
-      modal[randomNum].userAnswer = ko.observable();
+      modal[randomNum].answered = ko.observable(false);
+      modal[randomNum].userAnswer = ko.observable(false);
       questions.push(modal[randomNum]);
       index = positions.indexOf(randomNum);
       positions.splice(index, 1);
@@ -74,6 +74,9 @@
                 self.currentState("trivia");
                 self.currentTrivia(self.data()[0]);
                 self.length(1);
+                self.continueText(
+                  'Next&nbsp;&nbsp;<i class="fa fa-angle-right"></i>'
+                );
                 break;
 
               case "reset":
@@ -85,6 +88,9 @@
                 self.currentState("home");
                 self.currentTrivia(self.data()[0]);
                 self.length(0);
+                self.continueText(
+                  'Next&nbsp;&nbsp;<i class="fa fa-angle-right"></i>'
+                );
 
                 break;
 
