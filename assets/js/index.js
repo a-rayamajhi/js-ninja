@@ -47,7 +47,9 @@
     self.score = ko.observable(0);
     self.rank = ko.observable(null);
     self.enablePrevious = ko.observable(false);
-    self.continueText = ko.observable('Next&nbsp;&nbsp;<i class="fa fa-angle-right"></i>');
+    self.continueText = ko.observable(
+      'Next&nbsp;&nbsp;<i class="fa fa-angle-right"></i>'
+    );
 
     self.toState = function (ctx, event) {
       if (!!event.target.dataset && !!event.target.dataset.value) {
@@ -58,13 +60,11 @@
           ) {
             switch (event.target.dataset.value) {
               case "trivia":
-                self.chosenItems.forEach(checkItems);
-
                 self.currentState("result");
                 self.chosenItems[self.length() - 1] = self.chosenItem();
                 self.score(getScorePercentage());
                 self.rank(getRank());
-
+                checkItems();
                 break;
 
               case "try-again":
@@ -102,18 +102,14 @@
             self.currentTrivia(self.data()[0]);
             self.length(0);
           } else {
-            // TODO: work on triva-skip
-            // all the questions except the last one.
-            if (event.target.dataset.value == "trivia-skip") {
-              self.currentState("trivia");
-            } else {
-              self.currentState(event.target.dataset.value);
-              // self.chosenItems);
-            }
+            self.currentState(event.target.dataset.value);
 
             var pos = self.length();
 
             if (pos > 0) {
+              if (event.target.dataset.goal === "skip") {
+                self.chosenItems[pos - 1] = undefined;
+              }
               self.chosenItems[pos - 1] = self.chosenItem();
             }
 
@@ -123,21 +119,24 @@
             if (event.target.dataset.direction === "forwards") {
               pos = pos + 1;
             }
-            
-            if(pos>1){
+
+            if (pos > 1) {
               self.enablePrevious(true);
-              self.continueText('Next&nbsp;&nbsp;<i class="fa fa-angle-right"></i>');
-              if(pos===10){
-                self.continueText('<i class="fa fa-save"></i>&nbsp;&nbsp;Submit');
+              self.continueText(
+                'Next&nbsp;&nbsp;<i class="fa fa-angle-right"></i>'
+              );
+              if (pos === 10) {
+                self.continueText(
+                  '<i class="fa fa-save"></i>&nbsp;&nbsp;Submit'
+                );
               }
-            }
-            else{
+            } else {
               self.enablePrevious(false);
             }
 
-
             if (!!pos) {
               self.currentTrivia(self.data()[pos - 1]);
+              self.chosenItem(self.chosenItems[pos - 1]);
               self.length(pos);
             } else {
               self.currentTrivia(self.data()[0]);
@@ -174,28 +173,20 @@
         .length;
     }
 
-    function checkItems(item) {
-      if (null != item && item.isCorrect) {
-        for (var i = 0; i < 10; i++) {
-          for (var j = 0; j < 4; j++) {
-            if (self.data()[i].options[j].name == item.name) {
-              self.data()[i].answered(true);
-              break;
-            }
-          }
-        }
-      }
-      //////////////////////////////////
-      if (null != item) {
-        for (var i = 0; i < 10; i++) {
+    function checkItems() {
+      self.chosenItems.forEach(function (item, i) {
+        if (!!item) {
           for (var j = 0; j < 4; j++) {
             if (self.data()[i].options[j].name == item.name) {
               self.data()[i].userAnswer(item.name);
-              break;
+              if (item.isCorrect) {
+                self.data()[i].answered(true);
+              }
             }
           }
         }
-      }
+      });
+
       ////////////////////////////////////
     }
     function resetItems() {
