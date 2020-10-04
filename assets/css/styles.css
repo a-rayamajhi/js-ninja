@@ -1,38 +1,5 @@
-/* 
-*  CSS TABLE OF CONTENTS
-*   
-*  1.0 - HTML, Body
-*  2.0 - Single page main container 
-*  3.0 - Landing page
-*  4.0 - Trivia page
-*  5.0 - Result page
-*  6.0 - Belts rank
-*  7.0 - Answers page
-*
-*/
 
-
-
-
-
-
-
-/*** 4.0 -  ***/
-
-/*** 5.0 -  ***/
-
-/*** 6.0 -  ***/
-
-
-/*** 5.1 -  ***/
-
-/*** 5.2 -  ***/
-
-/*** 7.0 -  ***/
-
-
-
-/*** 1.0 - HTML, Body ***/
+/*** HTML, Body ***/
 html,
 body {
   font-family: "Roboto Condensed", sans-serif;
@@ -47,15 +14,38 @@ body {
 
 
 
-/*** 2.0 -  Single page main container ***/
+/*** Single page main container ***/
 .wrapper {
   height: 100%;
   background-color: #EFF1F6;
   padding: 1rem 1rem 0 1rem;
 }
 
+.logo-wrapper {
+  margin: 1.06rem;
+  text-align: center;
+}
 
-/*** 3.0 - Landing page ***/
+.logo-wrapper img {
+  width: 4.4rem;
+  cursor: pointer;
+}
+
+.title {
+  font-size: 1.9rem;
+  line-height: 2.2;
+}
+
+
+/*** Contents container ***/
+.container-fluid {
+  height: calc(100% - 176px);
+  background-color: #f9fafc;
+  border-radius: 2rem 2rem 0 0;
+}
+
+
+/*** Landing page ***/
 
 .state-home {
   height: inherit;
@@ -84,6 +74,12 @@ body {
   outline: none;
 }
 
+.home-container {
+  margin-top: 200px !important;
+}
+
+
+/*** Trivia page ***/
 
 .btn-outline-primary {
   color: #5172aa;
@@ -126,37 +122,20 @@ body {
   margin: 1rem 1.5rem;
 }
 
-.logo-wrapper {
-  margin: 1.06rem;
-  text-align: center;
-}
-
-.logo-wrapper img {
-  width: 4.4rem;
-  cursor: pointer;
-}
-
-.title {
-  font-size: 1.9rem;
-  line-height: 2.2;
-}
-
-.container-fluid {
-  height: calc(100% - 176px);
-  background-color: #f9fafc;
-  border-radius: 2rem 2rem 0 0;
-}
-
-.state-result,
-.state-trivia {
-  height: inherit;
-}
 
 .trivia-main {
   height: 95%;
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+
+/*** Result page ***/
+
+.state-result,
+.state-trivia {
+  height: inherit;
 }
 
 .main {
@@ -282,6 +261,7 @@ body {
   color: #223465;
 }
 
+/** Belts Rank**/
 .rank-belt {
   display: flex;
   justify-content: center;
@@ -419,9 +399,6 @@ body {
   margin-bottom: 100px;
 }
 
-.home-container {
-  margin-top: 200px !important;
-}
 
 .quiz-nav-btn {
   margin-top: 100px;

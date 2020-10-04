@@ -198,8 +198,7 @@ const modal = [
   },
   {
     id: "9",
-    question:
-      "What is JSON?",
+    question: "What is JSON?",
     options: [
       {
         name: "A Javascript library",

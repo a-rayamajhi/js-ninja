@@ -10,7 +10,6 @@
 */	
 -->
 
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -52,7 +51,7 @@
             src="assets/images/Logo.png"
             alt="Logo"
             data-bind="click: toState"
-            data-value="home"
+            data-value="reset"
           />
         </div>
         <div class="title">JS NINJA</div>
@@ -62,9 +61,12 @@
       <div class="container-fluid">
         <div class="state-home" data-bind="visible: currentState() == 'home'">
           <div class="container">
-         
             <div>
-              <input class="jsn-input-control" data-bind="value: jsNinja" placeholder="Please Enter Your Name"/>
+              <input
+                class="jsn-input-control"
+                data-bind="value: jsNinja"
+                placeholder="Please Enter Your Name"
+              />
             </div>
 
             <div class="d-flex justify-content-center">
@@ -74,8 +76,6 @@
                 data-direction="forwards"
                 type="button"
                 class="btn btn-danger btn-danger-overwrite"
-                data-toggle="tooltip"
-                data-placement="bottom"
                 title="Press to start"
               >
                 Start Trivia
@@ -218,8 +218,6 @@
               data-value="reset"
               type="button"
               class="btn btn-outline-danger"
-              data-toggle="tooltip"
-              data-placement="bottom"
               title="Go back to main menu"
             >
               <i class="fas fa-minus-circle"></i>
@@ -267,8 +265,6 @@
                   data-direction="backwards"
                   type="button"
                   class="btn btn-outline-primary"
-                  data-toggle="tooltip"
-                  data-placement="bottom"
                   title="Back to previous question"
                 >
                   <i class="fas fa-angle-left"></i>
@@ -281,9 +277,7 @@
                   data-direction="forwards"
                   type="button"
                   class="btn btn-outline-success"
-                  data-toggle="tooltip"
-                  data-placement="bottom"
-                  title="Submit final answer"
+                  title="Submit answer"
                 ></button>
               </div>
             </div>
@@ -301,8 +295,6 @@
               data-value="reset"
               type="button"
               class="btn btn-outline-danger"
-              data-toggle="tooltip"
-              data-placement="bottom"
               title="Go back to main menu"
             >
               <i class="fas fa-minus-circle"></i>
@@ -316,7 +308,7 @@
           <div class="main">
             <div class="text-center container">
               <br /><br />
-             
+
               <div class="percentage">
                 Score: <span data-bind="text: score"></span>%
               </div>
@@ -336,8 +328,6 @@
               data-value="try-again"
               type="button"
               class="btn btn-outline-primary"
-              data-toggle="tooltip"
-              data-placement="bottom"
               title="Back to first question"
             >
               Try Again
@@ -347,8 +337,6 @@
               data-value="review"
               type="button"
               class="btn btn-outline-success"
-              data-toggle="tooltip"
-              data-placement="bottom"
               title="View Answers"
             >
               See Correct Answers
@@ -367,8 +355,6 @@
               data-value="result"
               type="button"
               class="btn btn-light"
-              data-toggle="tooltip"
-              data-placement="bottom"
               title="Back to result page"
             >
               <i class="fas fa-chevron-left"></i>
@@ -427,8 +413,6 @@
               data-value="try-again"
               type="button"
               class="btn btn-outline-primary"
-              data-toggle="tooltip"
-              data-placement="bottom"
               title="Back to first question"
             >
               Try Again
@@ -438,8 +422,6 @@
               data-value="reset"
               type="button"
               class="btn btn-outline-danger"
-              data-toggle="tooltip"
-              data-placement="bottom"
               title="Back to main menu"
             >
               <i class="fas fa-minus-circle"></i>
