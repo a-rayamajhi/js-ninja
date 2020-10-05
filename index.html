@@ -50,8 +50,7 @@
           <img
             src="assets/images/Logo.png"
             alt="Logo"
-            data-bind="click: toState"
-            data-value="reset"
+            onclick="location.reload();"
           />
         </div>
         <div class="title">JS NINJA</div>
@@ -213,7 +212,7 @@
           data-bind="visible: currentState() == 'trivia'"
         >
           <div class="header align-items">
-            <button
+            <!-- <button
               data-bind="click: toState"
               data-value="reset"
               type="button"
@@ -221,7 +220,7 @@
               title="Go back to main menu"
             >
               ⊖ Reset
-            </button>
+            </button> -->
             <div class="bubble-container align-items-center">
               <div class="bubble-small"></div>
               <div class="bubble-mid"></div>
@@ -288,7 +287,7 @@
           data-bind="visible: currentState() == 'result'"
         >
           <div class="header align-items">
-            <button
+            <!-- <button
               data-bind="click: toState"
               data-value="reset"
               type="button"
@@ -296,7 +295,7 @@
               title="Go back to main menu"
             >
               ⊖ Reset
-            </button>
+            </button> -->
             <div class="name justify-content-flex-end">
               Candidate:&nbsp;<strong data-bind="text: jsNinja"></strong>
             </div>
@@ -414,7 +413,7 @@
             >
               Try Again
             </button>
-            <button
+            <!-- <button
               data-bind="click: toState"
               data-value="reset"
               type="button"
@@ -422,7 +421,7 @@
               title="Back to main menu"
             >
               ⊖ Reset
-            </button>
+            </button> -->
           </div>
         </div>
       </div>
