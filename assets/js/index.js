@@ -155,6 +155,7 @@
               self.currentTrivia(self.data()[0]);
               self.length(1);
             }
+            console.log(self.chosenItems);
           }
         } else {
           alert("Please enter your name");
