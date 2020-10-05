@@ -22,6 +22,14 @@
     return questions;
   }
 
+  function cleanUp(modal) {
+    for (var i = 0; i < modal.length; i++) {
+      modal[i].answered(false);
+      modal[i].userAnswer(false);
+    }
+    return modal;
+  }
+
   function AppViewModel() {
     const self = this,
       COUNT = 10;
@@ -74,6 +82,7 @@
                 self.chosenItems = [];
                 self.currentState("trivia");
                 self.currentTrivia(self.data()[0]);
+                self.data(cleanUp(self.data()));
                 self.length(1);
                 self.continueText(
                   'Next&nbsp;&nbsp;<i class="fa fa-angle-right"></i>'
@@ -114,9 +123,6 @@
             var pos = self.length();
 
             if (pos > 0) {
-              if (event.target.dataset.goal === "skip") {
-                self.chosenItems[pos - 1] = undefined;
-              }
               self.chosenItems[pos - 1] = self.chosenItem();
             }
 
