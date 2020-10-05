@@ -55,9 +55,7 @@
     self.score = ko.observable(0);
     self.rank = ko.observable(null);
     self.enablePrevious = ko.observable(false);
-    self.continueText = ko.observable(
-      'Next&nbsp;&nbsp;<i class="fa fa-angle-right"></i>'
-    );
+    self.continueText = ko.observable("Next&nbsp;&nbsp;▶");
 
     self.toState = function (ctx, event) {
       if (!!event.target.dataset && !!event.target.dataset.value) {
@@ -84,9 +82,7 @@
                 self.currentTrivia(self.data()[0]);
                 self.data(cleanUp(self.data()));
                 self.length(1);
-                self.continueText(
-                  'Next&nbsp;&nbsp;<i class="fa fa-angle-right"></i>'
-                );
+                self.continueText("Next&nbsp;&nbsp;▶");
                 break;
 
               case "reset":
@@ -98,9 +94,7 @@
                 self.currentState("home");
                 self.currentTrivia(self.data()[0]);
                 self.length(0);
-                self.continueText(
-                  'Next&nbsp;&nbsp;<i class="fa fa-angle-right"></i>'
-                );
+                self.continueText("Next&nbsp;&nbsp;▶");
 
                 break;
 
@@ -135,13 +129,9 @@
 
             if (pos > 1) {
               self.enablePrevious(true);
-              self.continueText(
-                'Next&nbsp;&nbsp;<i class="fa fa-angle-right"></i>'
-              );
+              self.continueText("Next&nbsp;&nbsp;▶");
               if (pos === 10) {
-                self.continueText(
-                  '<i class="fa fa-save"></i>&nbsp;&nbsp;Submit'
-                );
+                self.continueText("💾&nbsp;&nbsp;Submit");
               }
             } else {
               self.enablePrevious(false);
